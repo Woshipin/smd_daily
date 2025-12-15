@@ -267,6 +267,60 @@
 
       .element-default .background > *:nth-child(1) { animation-delay: 0.1s; }
       .element-default .background > *:nth-child(2) { animation-delay: 0.2s; }
+
+      /* =========================================
+         [ADDED] BACK TO TOP BUTTON STYLES
+         Colors matched to existing theme:
+         Gradient: Matches .match-container
+         Border: Matches #00FFFF (Cyan)
+         ========================================= */
+      .back-to-top {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          z-index: 9999;
+          width: 50px;
+          height: 50px;
+          border: 2px solid #00FFFF; /* Cyan Border to match theme */
+          border-radius: 50%;
+          cursor: pointer;
+          
+          /* Gradient background matching match cards */
+          background: linear-gradient(90deg, rgba(10, 25, 60, 0.95) 0%, rgba(27, 68, 162, 0.95) 84%);
+          
+          /* Glow Effect */
+          box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5);
+          
+          /* Layout for SVG */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          
+          /* Animation Properties */
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(20px);
+          transition: all 0.4s ease;
+      }
+
+      .back-to-top.show {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+      }
+
+      .back-to-top:hover {
+          transform: translateY(-3px) scale(1.05);
+          box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.8);
+          background: linear-gradient(90deg, rgba(27, 68, 162, 0.95) 0%, rgba(10, 25, 60, 0.95) 84%);
+      }
+
+      .back-to-top svg {
+          width: 24px;
+          height: 24px;
+          fill: #ffffff; /* White icon */
+          filter: drop-shadow(0 0 2px rgba(0,0,0,0.5));
+      }
       
 
       /* --- DESKTOP STYLES --- */
@@ -336,6 +390,18 @@
         .element-default .text-wrapper-3 {
             font-size: 34px;
         }
+
+        /* Adjust button position for desktop */
+        .back-to-top {
+            bottom: 40px;
+            right: 450px;
+            width: 60px;
+            height: 60px;
+        }
+        .back-to-top svg {
+            width: 30px;
+            height: 30px;
+        }
       }
 
     </style>
@@ -378,5 +444,36 @@
         </div>
       </div>
     </div>
+
+        <!-- [ADDED] BACK TO TOP BUTTON -->
+    <button onclick="topFunction()" id="backToTopBtn" class="back-to-top" title="Go to top">
+        <!-- White SVG Arrow -->
+        <svg viewBox="0 0 24 24">
+            <path d="M12 4l-8 8h6v8h4v-8h6z"></path>
+        </svg>
+    </button>
+
+    <!-- [ADDED] JAVASCRIPT FOR SCROLL FUNCTIONALITY -->
+    <script>
+        // Get the button
+        let mybutton = document.getElementById("backToTopBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 20) {
+                mybutton.classList.add("show");
+            } else {
+                mybutton.classList.remove("show");
+            }
+        });
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
   </body>
 </html>

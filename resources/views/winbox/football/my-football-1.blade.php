@@ -16,6 +16,8 @@
         margin: 0px;
         width: 100%;
         overflow-x: hidden;
+        /* เพิ่ม scroll smooth ที่ root เพื่อรองรับบาง browser */
+        scroll-behavior: smooth;
       }
       a {
         text-decoration: none;
@@ -251,7 +253,6 @@
       /* KEY CSS RULES START HERE */
       .bet-content .text-group {
         font-size: 22px;
-        /* 1. 默认样式：所有文本都设为普通字重 */
         font-weight: 450; 
         color: #0D2A4B; 
         line-height: 1.5;
@@ -261,15 +262,12 @@
          margin-bottom: 4px;
       }
 
-      /* 2. 覆盖样式：专门为 strong 标签设置更粗的字重 */
       .bet-content .text-group strong {
-        font-weight: 700; /* 您可以按需调整这个数值，比如 'bold' 或 700 */
+        font-weight: 700; 
       }
-      /* 也可以为 em 标签添加样式，以防万一 */
       .bet-content .text-group em {
         font-style: italic;
       }
-      /* KEY CSS RULES END HERE */
 
       @keyframes popIn {
         from { opacity: 0; transform: translateY(30px); }
@@ -287,6 +285,60 @@
 
       .element-default .matches-background > *:nth-child(2),
       .element-default .info-background > *:nth-child(2) { animation-delay: 0.2s; }
+
+      /* =========================================
+         [ADDED] BACK TO TOP BUTTON STYLES
+         Colors matched to existing theme:
+         Gradient: Matches .match-container
+         Border: Matches #00FFFF (Cyan)
+         ========================================= */
+      .back-to-top {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          z-index: 9999;
+          width: 50px;
+          height: 50px;
+          border: 2px solid #00FFFF; /* Cyan Border to match theme */
+          border-radius: 50%;
+          cursor: pointer;
+          
+          /* Gradient background matching match cards */
+          background: linear-gradient(90deg, rgba(10, 25, 60, 0.95) 0%, rgba(27, 68, 162, 0.95) 84%);
+          
+          /* Glow Effect */
+          box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5);
+          
+          /* Layout for SVG */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          
+          /* Animation Properties */
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(20px);
+          transition: all 0.4s ease;
+      }
+
+      .back-to-top.show {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+      }
+
+      .back-to-top:hover {
+          transform: translateY(-3px) scale(1.05);
+          box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.8);
+          background: linear-gradient(90deg, rgba(27, 68, 162, 0.95) 0%, rgba(10, 25, 60, 0.95) 84%);
+      }
+
+      .back-to-top svg {
+          width: 24px;
+          height: 24px;
+          fill: #ffffff; /* White icon */
+          filter: drop-shadow(0 0 2px rgba(0,0,0,0.5));
+      }
 
       @media (min-width: 769px) {
         .element-default .container {
@@ -349,6 +401,18 @@
         .bet-content .text-group {
           font-size: 30px;
         }
+
+        /* Adjust button position for desktop */
+        .back-to-top {
+            bottom: 40px;
+            right: 450px;
+            width: 60px;
+            height: 60px;
+        }
+        .back-to-top svg {
+            width: 30px;
+            height: 30px;
+        }
       }
 
     </style>
@@ -395,7 +459,6 @@
                     <h2 class="main-title">{!! $description->title !!}</h2>
                     <div class="separator-line"></div>
                     <div class="bet-content">
-                        <!-- 这行代码会忠实输出数据库里的HTML，包括<strong>标签 -->
                         <div class="text-group">{!! $description->information !!}</div>
                     </div>
                 </div>
@@ -406,5 +469,37 @@
 
       </div>
     </div>
+
+    <!-- [ADDED] BACK TO TOP BUTTON -->
+    <button onclick="topFunction()" id="backToTopBtn" class="back-to-top" title="Go to top">
+        <!-- White SVG Arrow -->
+        <svg viewBox="0 0 24 24">
+            <path d="M12 4l-8 8h6v8h4v-8h6z"></path>
+        </svg>
+    </button>
+
+    <!-- [ADDED] JAVASCRIPT FOR SCROLL FUNCTIONALITY -->
+    <script>
+        // Get the button
+        let mybutton = document.getElementById("backToTopBtn");
+
+        // When the user scrolls down 300px from the top of the document, show the button
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                mybutton.classList.add("show");
+            } else {
+                mybutton.classList.remove("show");
+            }
+        });
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+
   </body>
 </html>
