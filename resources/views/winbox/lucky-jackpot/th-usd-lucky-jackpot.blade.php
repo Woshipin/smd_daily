@@ -47,6 +47,57 @@
             background-color: #fff;
         }
 
+        /* =========================================
+           [NEW] BACK TO TOP BUTTON (Global Styles)
+           使用 Section 1 pools-row 的红色渐变
+           ========================================= */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            width: 50px;
+            height: 50px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            border-radius: 50%;
+            
+            /* Theme Color: Red Gradient (Matches Section 1/Pools Row) */
+            background: linear-gradient(180deg, #eb4648 0%, #9f0407 100%);
+            box-shadow: 0 6px 15px rgba(159, 4, 7, 0.5), inset 0 1px 0 rgba(255,255,255,0.3);
+            
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+            
+            opacity: 0;           
+            visibility: hidden;   
+            transform: translateY(20px); 
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px) scale(1.05);
+            /* Slightly brighter red on hover */
+            background: linear-gradient(135deg, #ff6b6b 0%, #c81919 100%);
+            box-shadow: 0 8px 20px rgba(159, 4, 7, 0.7);
+        }
+
+        /* The SVG Icon Style - Solid White Arrow */
+        .back-to-top svg {
+            width: 24px;
+            height: 24px;
+            fill: #ffffff; 
+            filter: drop-shadow(0 2px 1px rgba(0,0,0,0.2));
+        }
+
         /* ==========================================================================
            MOBILE STYLES (Max-Width: 480px)
         ========================================================================== */
@@ -62,7 +113,7 @@
 
             /* --- Mobile Section 1 --- */
             .section-1 {
-                background-image: url("{{ asset('images/lucky_jackpot/lucky-jackpot.jpg') }}");
+                background-image: url("{{ asset('images/lucky_jackpot/luckyjackpot.jpg') }}");
                 background-repeat: no-repeat;
                 background-position: top center;
                 
@@ -71,19 +122,34 @@
                 background-size: 100% 100%; 
                 
                 background-color: #5c0808;  
-                padding: 80px 10px 40px 10px;
+                padding: 90px 10px 40px 10px;
                 text-align: center;
                 position: relative;
                 overflow: hidden;
             }
+
+            /* 新增：用于填充 top-logo 容器的图片样式 */
+            .logo-image {
+                width: 80%;
+                height: 80%;
+                object-fit: contain; /* 修改为 contain，确保完整的 logo 显示 */
+                display: block;
+            }
             
+            /* 修改 .top-logo 以匹配截图中的 logo 样式和尺寸 */
             .top-logo {
-                position: absolute; top: 10px; right: 10px;
-                width: 40px; height: 40px;
-                background: #003366; border-radius: 50%; border: 2px solid white;
-                color: white; font-size: 9px;
+                position: absolute; top: 10px; right: 5px;
+                width: 90px; /* 增大尺寸 */
+                /* height: 90px; 增大尺寸 */
+                background: none; /* 移除背景 */
+                border-radius: 0; /* 移除圆角 */
+                border: none; /* 移除边框 */
+                color: transparent; /* 文本颜色透明 */
+                font-size: 0;      /* 字体大小为 0 */
                 display: flex; align-items: center; justify-content: center;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+                box-shadow: none; /* 移除阴影 */
+                overflow: visible; /* 允许图片形状决定 */
+                z-index: 20; /* 确保在顶部 */
             }
 
             /* --- Header 样式 (Mobile) --- */
@@ -103,7 +169,7 @@
             .header-en {
                 font-family: 'Nunito', sans-serif;
                 color: #fff; 
-                font-size: 16.5px;
+                font-size: 18px;
                 font-weight: 800; 
                 /* margin-bottom: 10px; */
                 line-height: 1;
@@ -157,7 +223,7 @@
                 background: linear-gradient(180deg, #ffffff 50%, #e6f7ff 100%);
             }
 
-            .pool-title-cn { font-size: 18px; font-weight: 800; margin-bottom: 2px; }
+            .pool-title-cn { font-size: 15px; font-weight: 800; margin-bottom: 2px; }
             .pool-title-en { font-size: 12px; line-height: 1.1; margin-bottom: 5px; font-weight: 600; }
             .pool-card.red .pool-title-cn, .pool-card.red .pool-title-en { color: #d93025; }
             .pool-card.blue .pool-title-cn, .pool-card.blue .pool-title-en { color: #0056b3; }
@@ -300,7 +366,7 @@
 
             /* --- Desktop Section 1 --- */
             .section-1 {
-                background-image: url("{{ asset('images/lucky_jackpot/lucky-jackpot.jpg') }}");
+                background-image: url("{{ asset('images/lucky_jackpot/luckyjackpot.jpg') }}");
                 background-repeat: no-repeat;
                 background-position: top center;
                 
@@ -309,18 +375,34 @@
                 background-size: 100% 100%; 
                 
                 background-color: #5c0808; 
-                padding: 180px 40px 100px 40px;
+                padding: 170px 40px 100px 40px;
                 text-align: center;
                 position: relative;
             }
+
+            /* 新增：用于填充 top-logo 容器的图片样式 */
+            .logo-image {
+                width: 90%;
+                height: 90%;
+                object-fit: contain; /* 修改为 contain，确保完整的 logo 显示 */
+                display: block;
+            }
+            
+            /* 修改 .top-logo 以匹配截图中的 logo 样式和尺寸 */
             .top-logo {
                 position: absolute; top: 15px; right: 15px;
-                width: 50px; height: 50px;
-                background: #003366; border-radius: 50%; border: 2px solid white;
-                color: white; font-size: 11px;
+                width: 150px; /* 增大尺寸 */
+                height: 150px; /* 增大尺寸 */
+                background: none; /* 移除背景 */
+                border-radius: 0; /* 移除圆角 */
+                border: none; /* 移除边框 */
+                color: transparent; /* 文本颜色透明 */
+                font-size: 0;      /* 字体大小为 0 */
                 display: flex; align-items: center; justify-content: center;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+                box-shadow: none; /* 移除阴影 */
                 cursor: pointer;
+                overflow: visible; /* 允许图片形状决定 */
+                z-index: 20; /* 确保在顶部 */
             }
 
             /* --- Header 样式 (Desktop) --- */
@@ -532,6 +614,18 @@
                 font-weight: 800; 
             }
             .divider-space { height: 20px; }
+
+            /* [NEW] Desktop Back-to-Top Positioning */
+            .back-to-top {
+                bottom: 30px;
+                right: 350px;
+                width: 60px;
+                height: 60px;
+            }
+            .back-to-top svg {
+                width: 30px;
+                height: 30px;
+            }
         }
 
     </style>
@@ -544,6 +638,12 @@
         <div class="mobile-container">
             <!-- SECTION 1 -->
             <section class="section-1">
+
+                <!-- 新增/修改：右上角的 logo -->
+                <div class="top-logo">
+                    <!-- 请确保该路径指向您的 logo 图片 -->
+                    <img src="{{ asset('images/lucky_jackpot/luckyjackpot_logo.png') }}" alt="Logo" class="logo-image">
+                </div>
                 
                 <!-- <div class="header-cn">当前奖池金额</div> -->
                 <div class="header-en">รางวัลรวมปัจจุบัน Current Prize Pool Amount</div>
@@ -633,6 +733,40 @@
             </div>
         </section>
     @endforeach
+
+        <!-- [新增] 返回顶部按钮 (实心箭头, 红色主题) -->
+    <button onclick="topFunction()" id="backToTopBtn" class="back-to-top" title="Go to top">
+        <!-- 实心箭头 SVG (白色) -->
+        <svg viewBox="0 0 24 24">
+            <!-- 向上实心箭头的路径 -->
+            <path d="M12 4l-8 8h6v8h4v-8h6z"></path>
+        </svg>
+    </button>
+
+    <!-- [新增] 用于滚动检测和返回顶部的 JAVASCRIPT -->
+    <script>
+        // 获取按钮元素
+        let mybutton = document.getElementById("backToTopBtn");
+
+        // 监听屏幕滚动事件 (Scroll)
+        window.addEventListener('scroll', function() {
+            // 如果向下滚动超过 300px，则添加 'show' 类来显示按钮
+            if (window.scrollY > 300) {
+                mybutton.classList.add("show");
+            } else {
+                // 否则，移除 'show' 类来隐藏按钮
+                mybutton.classList.remove("show");
+            }
+        });
+
+        // 点击按钮时触发的函数，页面平滑滚动回顶部
+        function topFunction() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
 
 </body>
 </html>
