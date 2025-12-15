@@ -21,6 +21,7 @@
             align-items: flex-start; /* 垂直方向从顶部开始对齐 */
             min-height: 100vh; /* 最小高度为整个浏览器视口高度 */
             padding: 0; /* 移除内边距，确保内容容器在页面顶部没有空间 */
+            scroll-behavior: smooth; /* 启用平滑滚动 */
         }
 
         /* --- 桌面端样式 (DESKTOP STYLES) --- */
@@ -381,6 +382,55 @@
             font-weight: 400; /* 正常字重 */
         }
 
+        /* --- Back to Top Button --- */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            width: 50px;
+            height: 50px;
+            border: 2px solid white; /* White Border */
+            border-radius: 50%;
+            cursor: pointer;
+            
+            /* Gradient background matching the orange theme */
+            background: linear-gradient(135deg, #E85D30 0%, #D85428 100%);
+            
+            /* Glow Effect */
+            box-shadow: 0px 0px 10px rgba(232, 93, 48, 0.5);
+            
+            /* Layout for SVG */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            /* Animation Properties */
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0px 0px 15px rgba(232, 93, 48, 0.8);
+            background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%);
+        }
+
+        .back-to-top svg {
+            width: 24px;
+            height: 24px;
+            fill: #ffffff; /* White icon */
+            filter: drop-shadow(0 0 2px rgba(0,0,0,0.5));
+        }
+
         /* --- 移动端响应式样式 (MOBILE STYLES) --- */
         @media (max-width: 768px) {
             /* 当屏幕宽度小于等于768px时，应用以下样式 */
@@ -591,6 +641,20 @@
                 margin-bottom: 5px;
             }
         }
+        
+        /* Adjust button position for desktop */
+        @media (min-width: 769px) {
+            .back-to-top {
+                bottom: 40px;
+                right: 400px;
+                width: 60px;
+                height: 60px;
+            }
+            .back-to-top svg {
+                width: 30px;
+                height: 30px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -632,5 +696,39 @@
             @endforeach
         @endif
     </div>
+    
+    <!-- [新增] 返回顶部按钮 (实心箭头, 橙色主题) -->
+    <button onclick="topFunction()" id="backToTopBtn" class="back-to-top" title="Go to top">
+        <!-- 实心箭头 SVG (白色) -->
+        <svg viewBox="0 0 24 24">
+            <!-- 向上实心箭头的路径 -->
+            <path d="M12 4l-8 8h6v8h4v-8h6z"></path>
+        </svg>
+    </button>
+
+    <!-- [新增] 用于滚动检测和返回顶部的 JAVASCRIPT -->
+    <script>
+        // 获取按钮元素
+        let mybutton = document.getElementById("backToTopBtn");
+
+        // 监听屏幕滚动事件 (Scroll)
+        window.addEventListener('scroll', function() {
+            // 如果向下滚动超过 100px，则添加 'show' 类来显示按钮
+            if (window.scrollY > 100) {
+                mybutton.classList.add("show");
+            } else {
+                // 否则，移除 'show' 类来隐藏按钮
+                mybutton.classList.remove("show");
+            }
+        });
+
+        // 点击按钮时触发的函数，页面平滑滚动回顶部
+        function topFunction() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
 </body>
 </html>
