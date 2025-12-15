@@ -66,6 +66,57 @@
             display: block; 
         }
 
+        /* =========================================
+           [NEW] BACK TO TOP BUTTON (Global Styles)
+           使用 Section 1 的金色/黑色主题
+           ========================================= */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            width: 50px;
+            height: 50px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            border-radius: 50%;
+            
+            /* Theme Color: Gold/Black */
+            background: var(--bg-black); /* 黑色背景 */
+            border: 2px solid var(--gold-text); /* 金色边框 */
+            box-shadow: 0 6px 15px rgba(0,0,0,0.6), 0 0 10px var(--gold-text); /* 黑色和金色阴影 */
+            
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+            
+            opacity: 0;           
+            visibility: hidden;   
+            transform: translateY(20px); 
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px) scale(1.05);
+            background: #1e1e1e; /* 稍微浅一点的黑色 */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.8), 0 0 15px var(--gold-text);
+        }
+
+        /* The SVG Icon Style - Solid White Arrow */
+        .back-to-top svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--gold-text); /* 金色箭头 */
+            filter: drop-shadow(0 0 2px rgba(255, 193, 7, 0.5));
+        }
+
         /* =========================================================
            2. 桌面端样式 (DESKTOP STYLES)
         ========================================================= */
@@ -277,6 +328,18 @@
                 border-radius: 2px;
             }
             .footer-logo { text-align: right; margin-top: 20px; opacity: 0.6; }
+
+            /* [NEW] Desktop Back-to-Top Positioning */
+            .back-to-top {
+                bottom: 50px;
+                right: 350px;
+                width: 60px;
+                height: 60px;
+            }
+            .back-to-top svg {
+                width: 30px;
+                height: 30px;
+            }
         }
 
         /* =========================================================
@@ -629,6 +692,39 @@
         </div>
 
     </div>
+    
+    <!-- [新增] 返回顶部按钮 (实心箭头, 金色/黑色主题) -->
+    <button onclick="topFunction()" id="backToTopBtn" class="back-to-top" title="Go to top">
+        <!-- 向上实心箭头的 SVG (金色) -->
+        <svg viewBox="0 0 24 24">
+            <path d="M12 4l-8 8h6v8h4v-8h6z"></path>
+        </svg>
+    </button>
+
+    <!-- [新增] 用于滚动检测和返回顶部的 JAVASCRIPT -->
+    <script>
+        // 获取按钮元素
+        let mybutton = document.getElementById("backToTopBtn");
+
+        // 监听屏幕滚动事件 (Scroll)
+        window.addEventListener('scroll', function() {
+            // 如果向下滚动超过 300px，则添加 'show' 类来显示按钮
+            if (window.scrollY > 300) {
+                mybutton.classList.add("show");
+            } else {
+                // 否则，移除 'show' 类来隐藏按钮
+                mybutton.classList.remove("show");
+            }
+        });
+
+        // 点击按钮时触发的函数，页面平滑滚动回顶部
+        function topFunction() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
 
 </body>
 </html>
