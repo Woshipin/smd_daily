@@ -389,15 +389,15 @@
                 <div class="sub-group">
                     <span class="sub-group-label" style="border-color: var(--theme-blue);">⚽ MY 足球</span>
                     <div class="links-grid">
-                        <a href="http://127.0.0.1:8000/my-football" target="_blank" class="link-card theme-blue">
+                        <a href="http://127.0.0.1:8000/winbox-my-football" target="_blank" class="link-card theme-blue">
                             <h4>MY Football (0)</h4>
                             <span>My-Football 0 场</span>
                         </a>
-                        <a href="http://127.0.0.1:8000/my-football-1" target="_blank" class="link-card theme-blue">
+                        <a href="http://127.0.0.1:8000/winbox-my-football-1" target="_blank" class="link-card theme-blue">
                             <h4>MY Football (1)</h4>
                             <span>My-Football 1</span>
                         </a>
-                        <a href="http://127.0.0.1:8000/my-football-2" target="_blank" class="link-card theme-blue">
+                        <a href="http://127.0.0.1:8000/winbox-my-football-2" target="_blank" class="link-card theme-blue">
                             <h4>MY Football (2)</h4>
                             <span>My-Football 2</span>
                         </a>
@@ -408,15 +408,15 @@
                 <div class="sub-group">
                     <span class="sub-group-label" style="border-color: var(--theme-red);">⚽ TH 足球</span>
                     <div class="links-grid">
-                        <a href="http://127.0.0.1:8000/th-football" target="_blank" class="link-card theme-red">
+                        <a href="http://127.0.0.1:8000/winbox-th-football" target="_blank" class="link-card theme-red">
                             <h4>TH Football (0)</h4>
                             <span>TH-Football 0 场</span>
                         </a>
-                        <a href="http://127.0.0.1:8000/th-football-1" target="_blank" class="link-card theme-red">
+                        <a href="http://127.0.0.1:8000/winbox-th-football-1" target="_blank" class="link-card theme-red">
                             <h4>TH Football (1)</h4>
                             <span>TH-Football 1</span>
                         </a>
-                        <a href="http://127.0.0.1:8000/th-football-2" target="_blank" class="link-card theme-red">
+                        <a href="http://127.0.0.1:8000/winbox-th-football-2" target="_blank" class="link-card theme-red">
                             <h4>TH Football (2)</h4>
                             <span>TH-Football 2</span>
                         </a>
@@ -435,15 +435,15 @@
                 <div class="sub-group">
                     <span class="sub-group-label" style="border-color: var(--theme-blue);">🏇 MY 赛马</span>
                     <div class="links-grid">
-                        <a href="http://127.0.0.1:8000/my-horse" target="_blank" class="link-card theme-blue">
+                        <a href="http://127.0.0.1:8000/winbox-my-horse" target="_blank" class="link-card theme-blue">
                             <h4>MY Horse (0)</h4>
                             <span>MY-Horse 0 场</span>
                         </a>
-                        <a href="http://127.0.0.1:8000/my-horse-1" target="_blank" class="link-card theme-blue">
+                        <a href="http://127.0.0.1:8000/winbox-my-horse-1" target="_blank" class="link-card theme-blue">
                             <h4>MY Horse (1)</h4>
                             <span>MY-Horse 1</span>
                         </a>
-                        <a href="http://127.0.0.1:8000/my-horse-2" target="_blank" class="link-card theme-blue">
+                        <a href="http://127.0.0.1:8000/winbox-my-horse-2" target="_blank" class="link-card theme-blue">
                             <h4>MY Horse (2)</h4>
                             <span>MY-Horse 2</span>
                         </a>
@@ -454,15 +454,15 @@
                 <div class="sub-group">
                     <span class="sub-group-label" style="border-color: var(--theme-green);">🏇 MY-USD 赛马</span>
                     <div class="links-grid">
-                        <a href="http://127.0.0.1:8000/my-usd-horse" target="_blank" class="link-card theme-green">
+                        <a href="http://127.0.0.1:8000/winbox-my-usd-horse" target="_blank" class="link-card theme-green">
                             <h4>MY USD Horse (0)</h4>
                             <span>MY-USD Horse 0 场</span>
                         </a>
-                        <a href="http://127.0.0.1:8000/my-usd-horse-1" target="_blank" class="link-card theme-green">
+                        <a href="http://127.0.0.1:8000/winbox-my-usd-horse-1" target="_blank" class="link-card theme-green">
                             <h4>MY USD Horse (1)</h4>
                             <span>MY-USD Horse 1</span>
                         </a>
-                        <a href="http://127.0.0.1:8000/my-usd-horse-2" target="_blank" class="link-card theme-green">
+                        <a href="http://127.0.0.1:8000/winbox-my-usd-horse-2" target="_blank" class="link-card theme-green">
                             <h4>MY USD Horse (2)</h4>
                             <span>MY-USD Horse 2</span>
                         </a>
@@ -473,15 +473,15 @@
                 <div class="sub-group">
                     <span class="sub-group-label" style="border-color: var(--theme-pink);">🏇 TH 赛马</span>
                     <div class="links-grid">
-                        <a href="http://127.0.0.1:8000/th-horse" target="_blank" class="link-card theme-pink">
+                        <a href="http://127.0.0.1:8000/winbox-th-horse" target="_blank" class="link-card theme-pink">
                             <h4>TH Horse (0)</h4>
                             <span>TH-Horse 0 场</span>
                         </a>
-                        <a href="http://127.0.0.1:8000/th-horse-1" target="_blank" class="link-card theme-pink">
+                        <a href="http://127.0.0.1:8000/winbox-th-horse-1" target="_blank" class="link-card theme-pink">
                             <h4>TH Horse (1)</h4>
                             <span>TH-Horse 1</span>
                         </a>
-                        <a href="http://127.0.0.1:8000/th-horse-2" target="_blank" class="link-card theme-pink">
+                        <a href="http://127.0.0.1:8000/winbox-th-horse-2" target="_blank" class="link-card theme-pink">
                             <h4>TH Horse (2)</h4>
                             <span>TH-Horse 2</span>
                         </a>
@@ -492,15 +492,15 @@
                 <div class="sub-group">
                     <span class="sub-group-label" style="border-color: var(--theme-orange);">🏇 TH-USD 赛马</span>
                     <div class="links-grid">
-                        <a href="http://127.0.0.1:8000/th-usd-horse" target="_blank" class="link-card theme-orange">
+                        <a href="http://127.0.0.1:8000/winbox-th-usd-horse" target="_blank" class="link-card theme-orange">
                             <h4>TH USD Horse (0)</h4>
                             <span>TH-USD Horse 0 场</span>
                         </a>
-                        <a href="http://127.0.0.1:8000/th-usd-horse-1" target="_blank" class="link-card theme-orange">
+                        <a href="http://127.0.0.1:8000/winbox-th-usd-horse-1" target="_blank" class="link-card theme-orange">
                             <h4>TH USD Horse (1)</h4>
                             <span>TH-USD Horse 1</span>
                         </a>
-                        <a href="http://127.0.0.1:8000/th-usd-horse-2" target="_blank" class="link-card theme-orange">
+                        <a href="http://127.0.0.1:8000/winbox-th-usd-horse-2" target="_blank" class="link-card theme-orange">
                             <h4>TH USD Horse (2)</h4>
                             <span>TH-USD Horse 2</span>
                         </a>
@@ -520,22 +520,22 @@
                     <span class="sub-group-label" style="border-color: var(--theme-gold);">💎 Winbox Jackpot</span>
                     <div class="grid-fixed-4">
                         <!-- 1. MYR Winbox -->
-                        <a href="http://127.0.0.1:8000/myr-winbox-jackpot" target="_blank" class="link-card theme-gold">
+                        <a href="http://127.0.0.1:8000/winbox-myr-winbox-jackpot" target="_blank" class="link-card theme-gold">
                             <h4>MYR Winbox Jackpot</h4>
                             <span>Myr-Winbox-Jackpot</span>
                         </a>
                         <!-- 2. MYR-USD Winbox -->
-                        <a href="http://127.0.0.1:8000/myr-usd-winbox-jackpot" target="_blank" class="link-card theme-gold">
+                        <a href="http://127.0.0.1:8000/winbox-myr-usd-winbox-jackpot" target="_blank" class="link-card theme-gold">
                             <h4>MYR-USD Winbox Jackpot</h4>
                             <span>Myr-USD-Winbox-Jackpot</span>
                         </a>
                         <!-- 3. THB Winbox -->
-                        <a href="http://127.0.0.1:8000/thb-winbox-jackpot" target="_blank" class="link-card theme-gold">
+                        <a href="http://127.0.0.1:8000/winbox-thb-winbox-jackpot" target="_blank" class="link-card theme-gold">
                             <h4>THB Winbox Jackpot</h4>
                             <span>Thb-Winbox-Jackpot</span>
                         </a>
                         <!-- 4. THB-USD Winbox -->
-                        <a href="http://127.0.0.1:8000/thb-usd-winbox-jackpot" target="_blank" class="link-card theme-gold">
+                        <a href="http://127.0.0.1:8000/winbox-thb-usd-winbox-jackpot" target="_blank" class="link-card theme-gold">
                             <h4>THB-USD Winbox Jackpot</h4>
                             <span>Thb-USD-Winbox-Jackpot</span>
                         </a>
@@ -547,22 +547,22 @@
                     <span class="sub-group-label" style="border-color: var(--theme-gold);">🍀 Lucky Jackpot</span>
                     <div class="grid-fixed-4">
                         <!-- 1. MYR Lucky -->
-                        <a href="http://127.0.0.1:8000/myr-lucky-jackpot" target="_blank" class="link-card theme-gold">
+                        <a href="http://127.0.0.1:8000/winbox-myr-lucky-jackpot" target="_blank" class="link-card theme-gold">
                             <h4>MYR Lucky Jackpot</h4>
                             <span>Myr-Lucky-Jackpot</span>
                         </a>
                         <!-- 2. MYR-USD Lucky -->
-                        <a href="http://127.0.0.1:8000/myr-usd-lucky-jackpot" target="_blank" class="link-card theme-gold">
+                        <a href="http://127.0.0.1:8000/winbox-myr-usd-lucky-jackpot" target="_blank" class="link-card theme-gold">
                             <h4>MYR-USD Lucky Jackpot</h4>
                             <span>Myr-USD-Lucky-Jackpot</span>
                         </a>
                         <!-- 3. TH Lucky -->
-                        <a href="http://127.0.0.1:8000/th-lucky-jackpot" target="_blank" class="link-card theme-gold">
+                        <a href="http://127.0.0.1:8000/winbox-th-lucky-jackpot" target="_blank" class="link-card theme-gold">
                             <h4>TH Lucky Jackpot</h4>
                             <span>Th-Lucky-Jackpot</span>
                         </a>
                         <!-- 4. TH-USD Lucky -->
-                        <a href="http://127.0.0.1:8000/th-usd-lucky-jackpot" target="_blank" class="link-card theme-gold">
+                        <a href="http://127.0.0.1:8000/winbox-th-usd-lucky-jackpot" target="_blank" class="link-card theme-gold">
                             <h4>TH-USD Lucky Jackpot</h4>
                             <span>Th-USD-Lucky-Jackpot</span>
                         </a>
@@ -580,19 +580,19 @@
                 <div class="sub-group">
                     <span class="sub-group-label" style="border-color: var(--theme-red);">⚠️ All Winbox Maintenance</span>
                     <div class="grid-fixed-4">
-                        <a href="http://127.0.0.1:8000/myr-maintain" target="_blank" class="link-card theme-red">
+                        <a href="http://127.0.0.1:8000/winbox-myr-maintain" target="_blank" class="link-card theme-red">
                             <h4>MYR Winbox Maintain</h4>
                             <span>Myr-Winbox-Maintain</span>
                         </a>
-                        <a href="http://127.0.0.1:8000/myr-usd-maintain" target="_blank" class="link-card theme-red">
+                        <a href="http://127.0.0.1:8000/winbox-myr-usd-maintain" target="_blank" class="link-card theme-red">
                             <h4>MYR-USD Winbox Maintain</h4>
                             <span>Myr-USD-Winbox-Maintain</span>
                         </a>
-                        <a href="http://127.0.0.1:8000/th-maintain" target="_blank" class="link-card theme-red">
+                        <a href="http://127.0.0.1:8000/winbox-th-maintain" target="_blank" class="link-card theme-red">
                             <h4>TH Winbox Maintain</h4>
                             <span>Th-Winbox-Maintain</span>
                         </a>
-                        <a href="http://127.0.0.1:8000/th-usd-maintain" target="_blank" class="link-card theme-red">
+                        <a href="http://127.0.0.1:8000/winbox-th-usd-maintain" target="_blank" class="link-card theme-red">
                             <h4>TH-USD WinboxMaintain</h4>
                             <span>Th-USD-Winbox-Maintain</span>
                         </a>
