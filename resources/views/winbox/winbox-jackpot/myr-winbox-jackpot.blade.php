@@ -11,7 +11,6 @@
             box-sizing: border-box;
         }
 
-        /* Default styles for Mobile */
         body {
             font-family: 'Arial', sans-serif;
             background: #ffffff;
@@ -19,201 +18,282 @@
         }
         
         /* =========================================
-           SECTION ONE (Mobile)
+           SECTION ONE (Mobile) - UPDATED DESIGN
            ========================================= */
         .section-one {
-            padding: 93px 15px 30px 15px; 
+            padding: 60px 10px 30px 10px;
             width: 100%;
-            min-height: 100vw; 
-            background-image: url("{{ asset('images/winbox_jackpot/myr-usd-jackpot.jpg') }}");  
+            min-height: 105vw; 
+            background-image: url("{{ asset('images/winbox_jackpot/9_winbox.jpg') }}");  
             background-repeat: no-repeat;
             background-position: top center;
             background-size: 100% 100%; 
             position: relative;
             overflow: visible; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
+        .top-logo-img {
+            position: absolute;
+            top: 20px;
+            right: 15px;
+            width: 80px; 
+            height: auto;
+            z-index: 20;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+        }
+
+        /* 标题部分 */
+        .jackpot-title-group {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            z-index: 5;
+            position: relative;
+            line-height: 1.1;
+        }
+
+        .jackpot-title-zh {
+            font-family: 'Arial Black', "Microsoft YaHei", sans-serif;
+            font-size: 34px;
+            font-weight: 900;
+            
+            /* --- 颜色修改开始 --- */
+            /* 1. 设置从上(白/米白) 到 下(金黄) 的渐变 */
+            background: linear-gradient(180deg, #ffffff 20%, #ffc20e 100%);
+            
+            /* 2. 将背景裁剪为文字形状 */
+            -webkit-background-clip: text;
+            background-clip: text;
+            
+            /* 3. 将文字填充色设为透明，以便露出背景渐变 */
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            /* --- 颜色修改结束 --- */
+
+            /* 保持原有描边设计 (深褐色) */
+            -webkit-text-stroke: 1px #5c2804; 
+            
+            /* 确保描边在填充的后面 (关键属性) */
+            paint-order: stroke fill;
+            
+            /* 立体投影 */
+            filter: drop-shadow(0 3px 0 #5c2804);
+            margin-bottom: 5px;
+        }
+
+        .jackpot-title-en {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 24px;
+            font-weight: 900;
+
+            /* --- 颜色修改开始 (同上) --- */
+            background: linear-gradient(180deg, #ffffff 20%, #ffc20e 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            /* --- 颜色修改结束 --- */
+
+            /* 保持原有描边 */
+            -webkit-text-stroke: 1px #5c2804;
+            paint-order: stroke fill;
+            filter: drop-shadow(0 3px 0 #5c2804);
+        }
+
+        /* 主金额 */
+        .main-jackpot-display {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            z-index: 5;
+            position: relative;
+            filter: drop-shadow(0 0 15px rgba(255, 200, 0, 0.6));
+        }
+
+        .main-rm-label {
+            font-family: 'Arial Black', sans-serif;
+            font-style: italic;
+            font-size: 30px;
+            font-weight: 900;
+            color: #ffffff;
+            -webkit-text-stroke: 6px #280055; 
+            paint-order: stroke fill;
+            margin-right: 5px;
+        }
+
+        .main-amount-value {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 50px;
+            font-weight: 900;
+            color: #ffffff;
+            -webkit-text-stroke: 9px #280055;
+            paint-order: stroke fill;
+            letter-spacing: -1px;
+        }
+
+        /* ========================
+           信封卡片区域
+           ======================== */
+        .envelope-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            width: 100%;
+            max-width: 600px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .envelope-item {
+            position: relative;
+            width: 48%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 
+           ================================================
+           [UPDATED] 白纸 (Ticket) 样式修改 
+           ================================================
+        */
+        .envelope-ticket {
+            width: 90%;
+            height: 85px;
+            
+            /* 左右缺口 */
+            background: 
+                radial-gradient(circle at 0 50%, transparent 12px, #ffffff 12.5px) top left, 
+                radial-gradient(circle at 100% 50%, transparent 12px, #ffffff 12.5px) top right;
+            background-size: 51% 100%;
+            background-repeat: no-repeat;
+            
+            border-radius: 10px 10px 0 0;
+            /* 调整 padding 让文字居中更好看 */
+            padding: 5px 2px 0 2px; 
+            text-align: center;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1; 
+            margin-bottom: -17px;
+        }
+
+        /* RM 标签样式 (复刻图中褐色/铜色效果) */
+        .ticket-currency {
+            font-family: 'Arial Black', sans-serif; /* 加粗字体 */
+            color: #b05b00; /* 截图中的深褐色/铜色 */
+            font-weight: 900;
+            font-size: 17px; /*稍微调大 */
+            /* margin-bottom: -2px; */
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            
+            /* 细微的白色描边让它在白底上更清晰 */
+            -webkit-text-stroke: 0px; 
+            text-shadow: 0px 1px 1px rgba(0,0,0,0.1); 
+        }
+        
+        /* 
+           数字样式 (复刻图中立体描边阴影效果) 
+           关键技术：paint-order: stroke fill (确保描边不吃掉字重) + drop-shadow
+        */
+        .ticket-value {
+            font-family: 'Arial Black', sans-serif;
+            /* font-size: 24px;  */
+            font-weight: 900;
+            /* line-height: 1.1; */
+            
+            /* 1. 设置很粗的白色描边 */
+            -webkit-text-stroke: 6px #ffffff; 
+            
+            /* 2. 确保填充色在描边之上 (不让描边把字变细) */
+            paint-order: stroke fill;
+            
+            /* 3. 使用 drop-shadow 给整个形状(包括描边)加投影，制造立体感 */
+            position: relative;
+            z-index: 2;
+        }
+
+        /* 橙色主题数字 (亮橙色填充 + 橙色光晕) */
+        .orange-theme .ticket-value { 
+            color: #ff7e00; 
+            filter: drop-shadow(0 2px 3px rgba(255, 126, 0, 0.4));
+        } 
+
+        /* 蓝色主题数字 (亮蓝色填充 + 蓝色光晕) */
+        .blue-theme .ticket-value { 
+            color: #1e88e5; 
+            filter: drop-shadow(0 2px 3px rgba(30, 136, 229, 0.4));
+        }   
+
+        /* ========================
+           信封口袋 (Pocket)
+           ======================== */
+        .envelope-pocket {
+            width: 100%;
+            /* padding: 25px 5px 15px 5px;  */
+            border-radius: 12px;
+            position: relative;
+            z-index: 2; 
+            text-align: center;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.4);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 75px;
+        }
+
+        .envelope-pocket.orange-bg {
+            background: linear-gradient(180deg, #ffd659 0%, #ffaa00 50%, #f07e05 100%);
+        }
+
+        .envelope-pocket.blue-bg {
+            background: linear-gradient(180deg, #8cd1ff 0%, #4facfe 50%, #0072ff 100%);
+        }
+
+        .pocket-text-zh {
+            font-size: 18px;
+            color: #ffffff;
+            font-weight: bold;
+            text-shadow: 0px 2px 2px rgba(160, 80, 0, 0.5), 0 0 2px #b85c00; 
+            margin-bottom: 3px;
+            line-height: 1.2;
+        }
+        
+        .blue-bg .pocket-text-zh {
+             text-shadow: 0px 2px 2px rgba(0, 80, 160, 0.5), 0 0 2px #004e9e;
+        }
+
+        .pocket-text-en {
+            font-family: 'Arial Narrow', Arial, sans-serif;
+            font-size: 15px;
+            color: #ffffff;
+            font-weight: 700;
+            line-height: 1;
+            -webkit-text-stroke: 2.5px #c46600; 
+            paint-order: stroke fill;
+        }
+        
+        .blue-bg .pocket-text-en {
+            -webkit-text-stroke: 2.5px #0056b3;
+        }
+
+
+        /* =========================================
+           SECTION TWO & THREE
+           ========================================= */
         .section-two {
             background: linear-gradient(135deg, #7130b0 0%, #78379b 100%);
             padding: 20px 10px;
         }
 
-        .header {
-            padding-top: 0;
-            margin-bottom: 5px;
-            text-align: center;
-            position: relative;
-            z-index: 5;
-        }
-
-        /* Logo */
-        .logo {
-            width: 70px;
-            height: 70px;
-            top: 20px;
-            right: 15px;
-            position: absolute;
-            background: linear-gradient(135deg, #8b4ec3 0%, #6b3ba8 100%);
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border: 4px solid #fff;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-            z-index: 10;
-        }
-
-        .logo-text { font-size: 24px; color: white; font-weight: bold; line-height: 1; }
-        .logo-brand { font-size: 10px; color: white; font-weight: bold; margin-top: 2px; }
-        .logo-lotto { font-size: 8px; padding: 2px 8px; background: linear-gradient(90deg, #ff6b35 0%, #ffa500 100%); color: white; font-weight: bold; border-radius: 10px; margin-top: 2px; }
-
-        /* =========================================
-           JACKPOT TEXT STYLES
-           ========================================= */
-        .jackpot-amount {
-            background: transparent; 
-            border: none;
-            box-shadow: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 2px; 
-            padding: 0; 
-            position: relative; 
-            z-index: 2;
-        }
-
-        .usd-label { 
-            padding: 30px 5px 0px 0px; 
-            margin-bottom: 5px;
-            font-family: 'Arial Black', sans-serif;
-            font-size: 28px; 
-            font-weight: 900; 
-            font-style: italic;
-            color: #ffffff; 
-            -webkit-text-stroke: 10px #310068; 
-            paint-order: stroke fill;
-            filter: drop-shadow(0px 0px 3px #ffcc00); 
-            transform: translateY(2px);
-        }
-
-        .amount { 
-            padding: 15px 0px 0px 5px;
-            font-family: 'Arial Black', sans-serif;
-            font-size: 42px; 
-            font-weight: 900; 
-            color: #ffffff;
-            letter-spacing: 1px; 
-            line-height: 1;
-            -webkit-text-stroke: 10px #310068; 
-            paint-order: stroke fill;
-            filter: drop-shadow(0 0 0px #ffcc00) drop-shadow(0 0 3px #ffcc00) drop-shadow(2px 4px 0px #ffaa00);
-            position: relative;
-        }
-
-        /* Prize Cards */
-        .prize-cards {
-            gap: 15px;
-            display: grid;
-            grid-template-columns: 1fr 1fr; 
-            position: relative;
-            z-index: 2;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 0 5px; 
-        }
-
-        .prize-card {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center; 
-            height: 100%;
-            padding: 18px
-        }
-
-        .prize-card-top {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .prize-amount-label {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 0px;
-            line-height: 1.2;
-        }
-
-        /* Mobile Prize Value Styles */
-        .prize-value {
-            font-family: 'Arial Black', sans-serif;
-            font-size: 20px; 
-            font-weight: 900;
-            line-height: 1.1;
-            position: relative;
-            z-index: 2;
-            -webkit-text-stroke: 6px #ffffff; 
-            paint-order: stroke fill;
-            filter: drop-shadow(0 3px 3px rgba(0,0,0,0.3));
-        }
-
-        .prize-card.orange .prize-amount-label { color: #9d4209; }
-        .prize-card.orange .prize-value { color: #FF6600; }
-        
-        .prize-card.blue .prize-amount-label { color: #00449b; }
-        .prize-card.blue .prize-value { color: #007AFF; }
-
-        .prize-card-bottom {
-            position: relative;
-            width: 100%; 
-            margin-top: -22px; 
-            padding: 18px 5px 12px 5px;
-            border-radius: 16px 16px 15px 15px;
-            text-align: center;
-            z-index: 2; 
-            box-shadow: inset 0 2px 3px rgba(255,255,255,0.4), 0 -2px 5px rgba(0,0,0,0.1); 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .prize-card.orange .prize-card-bottom {
-            background: linear-gradient(180deg, #ffc55c 0%, #ff9e3d 50%, #e87426 100%);
-            border-top: 2px solid #ffe8b8; 
-        }
-
-        .prize-card.blue .prize-card-bottom {
-            background: linear-gradient(180deg, #8cd1ff 0%, #3aa1ff 50% , #007aff 100%);
-            border-top: 2px solid #dbeeff; 
-        }
-
-        .prize-label-thai {
-            font-size: 15px;
-            color: #fff;
-            font-weight: bold;
-            text-shadow: 0px 1px 2px rgba(160, 80, 0, 0.5);
-            margin-bottom: 2px;
-            line-height: 1.2;
-        }
-        
-        .prize-card.blue .prize-label-thai {
-             text-shadow: 0px 1px 2px rgba(0, 80, 160, 0.5);
-        }
-
-        .prize-label-english {
-            font-size: 11px;
-            color: #fff;
-            font-weight: 600;
-            opacity: 0.95;
-            text-shadow: 0px 1px 1px rgba(0,0,0,0.2);
-            line-height: 1.1;
-        }
-
-        /* Section 2 styles */
         .third-prize-section {
             border-radius: 25px;
             background: linear-gradient(180deg, #feac55 0%, #f5954a 50%, #e9763d 100%);
@@ -223,75 +303,36 @@
             overflow: visible;
         }
 
-        /* 
-           =============================================================
-           [UPDATED] 3D HEADER STYLES (More Depth)
-           =============================================================
-        */
         .third-prize-header { 
             width: 90%;
             margin: -40px auto 0 auto;
             position: relative;
             z-index: 5;
             text-align: center;
-            
-            /* White Outer Shell */
             background-color: #ffffff;
-            padding: 8px; /* The white border width */
+            padding: 8px; 
             border-radius: 16px;
-            
-            /* 3D Effect for the White Shell (Solid gray shadow creates thickness) */
-            box-shadow: 
-                0 6px 0 #d9d9d9, 
-                0 15px 20px rgba(0,0,0,0.4);
+            box-shadow: 0 6px 0 #d9d9d9, 0 15px 20px rgba(0,0,0,0.4);
         }
 
         .third-prize-title { 
-            /* Red Inner Button */
             background: linear-gradient(180deg, #fa6d64 0%, #e04b45 40%, #c4322c 100%);
             padding: 5px 0;
             border-radius: 10px;
-            
-            /* Text Styles */
             font-family: 'Arial Black', sans-serif;
             font-size: 24px;
             color: #ffffff;
             font-weight: 900;
-            
-            /* 3D Text Stroke */
             -webkit-text-stroke: 4px #7a1e17; 
             paint-order: stroke fill;
-            
-            /* Text Drop Shadow */
             filter: drop-shadow(0 2px 0px rgba(0,0,0,0.3));
-            
-            /* 3D Button Depth (Dark Red Solid Shadow) + Inner Shine */
-            box-shadow: 
-                inset 0 2px 0 rgba(255,255,255,0.4), /* Top Shine */
-                0 5px 0 #921d18,  /* Solid 3D Side Thickness */
-                0 8px 5px rgba(0,0,0,0.3); /* Drop shadow under the red button */
-            
+            box-shadow: inset 0 2px 0 rgba(255,255,255,0.4), 0 5px 0 #921d18, 0 8px 5px rgba(0,0,0,0.3); 
             position: relative;
-            top: -2px; /* Slight lift to allow push effect if needed */
-        }
-
-        /* Shining effect overlay (optional, adds gloss) */
-        .third-prize-title::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 20%;
-            width: 60%;
-            height: 50%;
-            background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%);
-            border-radius: 50%;
-            pointer-events: none;
-            filter: blur(4px);
+            top: -2px;
         }
 
         .third-prize-content { border-radius: 20px; padding: 15px 20px 25px 20px; background: linear-gradient(180deg, #fef9f3 0%, #fef5eb 100%); margin-top: 20px; }
         
-        /* Mobile Bonus Badge */
         .bonus-badge { 
             padding: 12px 25px; 
             font-size: 19px; 
@@ -315,7 +356,6 @@
         .detail-label-english { color: #7d5c4d; margin-top: 3px; }
         .detail-value { padding: 10px 10px; font-size: 17px; min-width: 120px; text-align: center; display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: linear-gradient(135deg, #fff 0%, #fffaf5 100%); border-radius: 20px; font-weight: bold; color: #f12a2c; box-shadow: 0 4px 15px rgba(230,57,70,0.15); border: 2px solid rgba(230,57,70,0.1); }
 
-        /* Summary Section */
         .summary-section { margin-top: 20px; margin-bottom: 20px; }
         .section-title, .bonus-section-title { color: #0c3c60; font-family: 'Arial', sans-serif; font-weight: bold; font-size: 25px; border-bottom: 3px solid #0c3c60; padding-bottom: 15px; margin-bottom: 15px; }
         .bonus-section-title { margin-top: 40px; }
@@ -328,6 +368,58 @@
         .section-three { margin-top: 0; padding: 0 10px 20px 10px; }
 
         /* =========================================
+           [IMPROVED] BACK TO TOP BUTTON
+           ========================================= */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            width: 50px;
+            height: 50px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            border-radius: 50%;
+            
+            /* Theme Color: Purple Gradient (Matches Screenshot) */
+            background: linear-gradient(135deg, #9b51e0 0%, #5c2804 0%, #7130b0 0%, #521d8c 100%);
+            box-shadow: 0 6px 15px rgba(113, 48, 176, 0.5), inset 0 1px 0 rgba(255,255,255,0.3);
+            
+            /* Flex for centering the SVG */
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+            
+            /* [NEW] Visibility Animation */
+            opacity: 0;           /* เริ่มต้นด้วยการซ่อน (透明) */
+            visibility: hidden;   /* เริ่มต้นกดไม่ได้ */
+            transform: translateY(20px); /* เลื่อนลงไปนิดหน่อย */
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animation นุ่มนวล */
+        }
+
+        /* Show Class: เมื่อมี class นี้ ปุ่มจะปรากฏขึ้น */
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px) scale(1.05);
+            background: linear-gradient(135deg, #a569e0 0%, #6323a6 100%);
+            box-shadow: 0 8px 20px rgba(113, 48, 176, 0.7);
+        }
+
+        /* The SVG Icon Style - Solid White Arrow */
+        .back-to-top svg {
+            width: 24px;
+            height: 24px;
+            fill: #ffffff; 
+            filter: drop-shadow(0 2px 1px rgba(0,0,0,0.2));
+        }
+
+        /* =========================================
            DESKTOP VIEW STYLES
            ========================================= */
         @media (min-width: 769px) {
@@ -335,86 +427,56 @@
             .page-wrapper { max-width: 45%; margin: 0 auto; }
 
             .section-one {
-                padding: 280px 20px 40px 20px;
-                min-height: 900px;
-                aspect-ratio: unset; 
-                background-image: url("{{ asset('images/winbox_jackpot/myr-usd-jackpot.jpg') }}"); 
-                background-repeat: no-repeat;
+                padding: 120px 20px 40px 20px;
+                min-height: 800px;
                 background-position: center top;
-                background-size: 100% 100%;
             }
 
-            .section-two { padding: 30px 10px; background: linear-gradient(135deg, #7130b0 0%, #78379b 100%); }
+            .section-two { padding: 30px 10px; }
             .section-three { margin-top: 0; padding: 0 10px 30px 10px; }
-
-            .header { margin-bottom: 20px; padding-top: 0; }
     
-            .logo { width: 100px; height: 100px; right: 20px; top: 30px; }
-            .logo-text { font-size: 32px; }
-            .logo-brand { font-size: 14px; }
-            .logo-lotto { font-size: 11px; padding: 2px 12px; }
+            .top-logo-img { width: 160px; top: 30px; right: 30px; }
 
-            .jackpot-amount {
-                background: transparent; 
-                border: none;
-                box-shadow: none;
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                gap: 10px; 
-                padding: 0; 
-                position: relative; 
-                z-index: 2;
-            }
-    
-            .usd-label { 
-                /* padding: 0px 5px 0px 0px; */
-                font-size: 55px; 
-                -webkit-text-stroke: 18px #310068; 
-                filter: drop-shadow(0 0 3px #ffcc00) drop-shadow(0 0 5px #ffcc00) drop-shadow(2px 4px 0px #ffaa00);
-                transform: translateY(2px);
-            }
+            .jackpot-title-zh { font-size: 60px; -webkit-text-stroke: 2px #5c2804;  filter: drop-shadow(0 5px 0 #5c2804); margin-bottom: 0;}
+            .jackpot-title-en { font-size: 40px; -webkit-text-stroke: 2px #5c2804; filter: drop-shadow(0 5px 0 #5c2804); }
 
-            .amount { 
-                padding: 0px 0px 0px 5px;
-                font-size: 110px; 
-                -webkit-text-stroke: 18px #310068; 
-                filter: drop-shadow(0 0 3px #ffcc00) drop-shadow(0 0 5px #ffcc00) drop-shadow(2px 4px 0px #ffaa00);
-            }
+            .main-rm-label { font-size: 60px; -webkit-text-stroke: 10px #280055; margin-right: 15px; }
+            .main-amount-value { font-size: 110px; -webkit-text-stroke: 15px #280055; }
     
-            .prize-cards { 
-                max-width: 100%; 
-                width: 100%;
-                display: grid;
-                grid-template-columns: 45% 45%;
-                justify-content: center;
-                margin-top: 35px;
+            .envelope-grid { 
                 gap: 30px;
+                margin-top: 20px;
+                max-width: 90%;
             }
             
-            .prize-card-top { 
-                width: 90%; 
-                padding: 10px 10px 50px 10px; 
-                border-radius: 20px 20px 0 0;
+            .envelope-ticket {
+                width: 90%;
+                height: 150px;
+                /* padding-top: 20px; */
+                /* margin-bottom: -60px; */
+                background: 
+                    radial-gradient(circle at 0 50%, transparent 12px, #ffffff 12.5px) top left, 
+                    radial-gradient(circle at 100% 50%, transparent 12px, #ffffff 12.5px) top right;
+                background-size: 51% 100%;
+                background-repeat: no-repeat;
             }
             
-            .prize-amount-label { font-size: 35px; font-weight: 700; }
-            
-            .prize-value { 
-                font-size: clamp(40px, 4vw, 50px); 
-                letter-spacing: 0; 
-                -webkit-text-stroke: 10px #ffffff; 
-                filter: drop-shadow(0 4px 5px rgba(0,0,0,0.2));
-                margin-left: 0px;
+            /* Desktop Ticket Font Adjustments */
+            .ticket-currency { font-size: 28px; margin-bottom: 5px; }
+            .ticket-value { font-size: 43px; -webkit-text-stroke: 10px #ffffff; }
+
+            .envelope-pocket { 
+                /* padding: 40px 10px 30px 10px;  */
+                border-radius: 20px; 
+                min-height: 120px;
             }
 
-            .prize-card-bottom { padding: 30px 15px; border-radius: 25px 25px 20px 20px; margin-top: -45px; }
-            .prize-label-thai { font-size: 30px; margin-bottom: 5px; }
-            .prize-label-english { font-size: 22px; }
+            .pocket-text-zh { font-size: 35px;  margin-bottom: 8px; }
+            .pocket-text-en { font-size: 25px; -webkit-text-stroke: 6px #c46600; }
+            .blue-bg .pocket-text-en { -webkit-text-stroke: 6px #0056b3; }
+            
 
             .third-prize-section { border-radius: 35px; margin-bottom: 0; padding: 1px;}
-            
-            /* [UPDATED] Desktop 3D Styles */
             .third-prize-header { 
                 width: 85%;
                 margin: -50px auto 0 auto;
@@ -428,21 +490,12 @@
                 padding: 10px 0;
                 border-radius: 14px;
                 -webkit-text-stroke: 6px #7a1e17; 
-                box-shadow: 
-                    inset 0 3px 0 rgba(255,255,255,0.4),
-                    0 8px 0 #921d18, 
-                    0 10px 8px rgba(0,0,0,0.3);
+                box-shadow: inset 0 3px 0 rgba(255,255,255,0.4), 0 8px 0 #921d18, 0 10px 8px rgba(0,0,0,0.3);
             }
 
             .third-prize-content { border-radius: 28px; padding: 15px 35px 35px 35px; margin-top: 30px; }
             
-            .bonus-badge { 
-                padding: 15px 35px; 
-                /* margin: 0 auto 30px auto;  */
-                font-size: 40px; 
-                width: 100%; 
-                max-width: 690px; 
-            }
+            .bonus-badge { padding: 15px 35px; font-size: 40px; width: 100%; max-width: 690px; }
             
             .detail-row { padding: 18px 0; }
             .detail-label-thai, .detail-label-english { font-size: 28px; }
@@ -451,6 +504,18 @@
             .section-title, .bonus-section-title { font-size: 35px; }
             .summary-label { font-size: 35px; }
             .summary-value { font-size: 35px; color: red; }
+
+            /* Desktop Back-to-Top Positioning */
+            .back-to-top {
+                bottom: 50px;
+                right: 400px;
+                width: 60px;
+                height: 60px;
+            }
+            .back-to-top svg {
+                width: 30px;
+                height: 30px;
+            }
         }
     </style>
 </head>
@@ -458,42 +523,54 @@
 
 <div class="page-wrapper">
 
-    <!-- 循环开始：遍历所有 Jackpot 数据 -->
     @foreach($jackpots as $jackpot)
+        
         <!-- Section 1 -->
         <div class="section-one">
+            
+            <img src="{{ asset('images/maintain/9_winbox.logo.png') }}" class="top-logo-img" alt="Winbox Logo">
 
-            <!-- Header -->
-            <div class="header">
-                <div class="jackpot-amount">
-                    <span class="usd-label">RM</span>
-                    <span class="amount">{{ $jackpot->amount }}</span>
-                </div>
+            <div class="jackpot-title-group">
+                <div class="jackpot-title-zh">积宝金额</div>
+                <div class="jackpot-title-en">Jackpot Pool Amount</div>
             </div>
 
-            <!-- Prize Cards -->
-            <div class="prize-cards">
-                <!-- Orange Card -->
-                <div class="prize-card orange">
-                    <div class="prize-card-top">
-                        <div class="prize-amount-label">RM</div>
-                        <div class="prize-value">{{ $jackpot->prize_value_today }}</div>
-                    </div>
-                </div>
+            <div class="main-jackpot-display">
+                <span class="main-rm-label">RM</span>
+                <span class="main-amount-value">{{ $jackpot->amount }}</span>
+            </div>
+
+            <div class="envelope-grid">
                 
-                <!-- Blue Card -->
-                <div class="prize-card blue">
-                    <div class="prize-card-top">
-                        <div class="prize-amount-label">RM</div>
-                        <div class="prize-value">{{ $jackpot->prize_value_current }}</div>
+                <!-- 橙色信封 -->
+                <div class="envelope-item orange-theme">
+                    <div class="envelope-ticket">
+                        <span class="ticket-currency">RM</span>
+                        <div class="ticket-value">{{ $jackpot->prize_value_today }}</div>
+                    </div>
+                    <div class="envelope-pocket orange-bg">
+                        <div class="pocket-text-zh">今日送出奖金</div>
+                        <div class="pocket-text-en">Bonus Prize Payout Today</div>
                     </div>
                 </div>
+
+                <!-- 蓝色信封 -->
+                <div class="envelope-item blue-theme">
+                    <div class="envelope-ticket">
+                        <span class="ticket-currency">RM</span>
+                        <div class="ticket-value">{{ $jackpot->prize_value_current }}</div>
+                    </div>
+                    <div class="envelope-pocket blue-bg">
+                        <div class="pocket-text-zh">当前奖池金额</div>
+                        <div class="pocket-text-en">Current Prize Pool Amount</div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
         <!-- Section 2 -->
         <div class="section-two">
-            <!-- Third Prize Section -->
             <div class="third-prize-section">
                 <div class="third-prize-header">
                     <div class="third-prize-title">{{ $jackpot->third_prize_title }}</div>
@@ -533,7 +610,6 @@
 
         <!-- Section 3 -->
         <div class="section-three">
-            <!-- Summary Section -->
             <div class="summary-section">
                 <div class="section-title">{{ $jackpot->section_title }}</div>
                 
@@ -560,6 +636,40 @@
     @endforeach
 
 </div>
+
+<!-- [新增] 返回顶部按钮 (实心箭头, 紫色主题) -->
+<button onclick="topFunction()" id="backToTopBtn" class="back-to-top" title="Go to top">
+    <!-- 实心箭头 SVG (白色) -->
+    <svg viewBox="0 0 24 24">
+        <!-- 向上实心箭头的路径 -->
+        <path d="M12 4l-8 8h6v8h4v-8h6z"></path>
+    </svg>
+</button>
+
+<!-- [新增] 用于滚动检测和返回顶部的 JAVASCRIPT -->
+<script>
+    // 获取按钮元素
+    let mybutton = document.getElementById("backToTopBtn");
+
+    // 监听屏幕滚动事件 (Scroll)
+    window.addEventListener('scroll', function() {
+        // 如果向下滚动超过 300px，则添加 'show' 类来显示按钮
+        if (window.scrollY > 300) {
+            mybutton.classList.add("show");
+        } else {
+            // 否则，移除 'show' 类来隐藏按钮
+            mybutton.classList.remove("show");
+        }
+    });
+
+    // 点击按钮时触发的函数，页面平滑滚动回顶部
+    function topFunction() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+</script>
 
 </body>
 </html>
