@@ -168,8 +168,8 @@
             
             /* 左右缺口 */
             background: 
-                radial-gradient(circle at 0 50%, transparent 12px, #ffffff 12.5px) top left, 
-                radial-gradient(circle at 100% 50%, transparent 12px, #ffffff 12.5px) top right;
+                radial-gradient(circle at 0 30%, transparent 9px, #ffffff 9px) top left, 
+                radial-gradient(circle at 100% 30%, transparent 9px, #ffffff 9px) top right;
             background-size: 51% 100%;
             background-repeat: no-repeat;
             
@@ -437,8 +437,8 @@
     
             .top-logo-img { width: 160px; top: 30px; right: 30px; }
 
-            .jackpot-title-zh { font-size: 60px; -webkit-text-stroke: 2px #5c2804;  filter: drop-shadow(0 5px 0 #5c2804); margin-bottom: 0;}
-            .jackpot-title-en { font-size: 40px; -webkit-text-stroke: 2px #5c2804; filter: drop-shadow(0 5px 0 #5c2804); }
+            .jackpot-title-zh { font-size: 65px; -webkit-text-stroke: 2px #5c2804;  filter: drop-shadow(0 5px 0 #5c2804); margin-bottom: 10px;}
+            .jackpot-title-en { font-size: 50px; -webkit-text-stroke: 2px #5c2804; filter: drop-shadow(0 5px 0 #5c2804); }
 
             .main-rm-label { font-size: 60px; -webkit-text-stroke: 10px #280055; margin-right: 15px; }
             .main-amount-value { font-size: 110px; -webkit-text-stroke: 15px #280055; }
@@ -451,18 +451,18 @@
             
             .envelope-ticket {
                 width: 90%;
-                height: 150px;
+                height: 135px;
                 /* padding-top: 20px; */
                 /* margin-bottom: -60px; */
                 background: 
-                    radial-gradient(circle at 0 50%, transparent 12px, #ffffff 12.5px) top left, 
-                    radial-gradient(circle at 100% 50%, transparent 12px, #ffffff 12.5px) top right;
+                    radial-gradient(circle at 0 30%, transparent 12px, #ffffff 12.5px) top left, 
+                    radial-gradient(circle at 100% 30%, transparent 12px, #ffffff 12.5px) top right;
                 background-size: 51% 100%;
                 background-repeat: no-repeat;
             }
             
             /* Desktop Ticket Font Adjustments */
-            .ticket-currency { font-size: 28px; margin-bottom: 5px; }
+            .ticket-currency { font-size: 30px; margin-bottom: 5px; }
             .ticket-value { font-size: 43px; -webkit-text-stroke: 10px #ffffff; }
 
             .envelope-pocket { 

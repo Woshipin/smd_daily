@@ -223,8 +223,8 @@
                 background: linear-gradient(180deg, #ffffff 50%, #e6f7ff 100%);
             }
 
-            .pool-title-cn { font-size: 15px; font-weight: 800; margin-bottom: 2px; }
-            .pool-title-en { font-size: 12px; line-height: 1.1; margin-bottom: 5px; font-weight: 600; }
+            .pool-title-cn { font-size: 16px; font-weight: 800; margin-bottom: 2px; }
+            .pool-title-en { font-size: 14px; line-height: 1.1; margin-bottom: 5px; font-weight: 600; }
             .pool-card.red .pool-title-cn, .pool-card.red .pool-title-en { color: #d93025; }
             .pool-card.blue .pool-title-cn, .pool-card.blue .pool-title-en { color: #0056b3; }
             
@@ -232,7 +232,7 @@
                 border-radius: 50px; 
                 color: white; 
                 font-weight: 800; 
-                font-size: 15px;
+                font-size: 17px;
                 padding: 6px 2px; 
                 width: 100%; 
                 display: flex;           
