@@ -28,7 +28,7 @@
       .element-default {
         display: flex;
         flex-direction: column;
-        align-items: center; 
+        align-items: center;
         position: relative;
         background-color: #0a1628;
       }
@@ -45,7 +45,7 @@
       .element-default .margin {
         position: relative;
         width: 100%;
-        height: auto; 
+        height: auto;
         object-fit: cover;
       }
 
@@ -54,12 +54,12 @@
         flex-direction: column;
         width: 100%;
         align-items: center;
-        gap: 0; 
-        padding: 40px 20px; 
+        gap: 0;
+        padding: 40px 20px;
         position: relative;
-        background-color: #f8f8f8; 
+        background-color: #f8f8f8;
       }
-      
+
       .max-bet-container {
         width: 100%;
         font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
@@ -74,9 +74,9 @@
       }
 
       .bet-section .main-title {
-        font-size: 22px; 
+        font-size: 22px;
         font-weight: 900;
-        color: #0D2A4B; 
+        color: #0D2A4B;
         letter-spacing: 0.5px;
       }
 
@@ -88,18 +88,18 @@
         background-color: transparent;
         margin: 15px 0 25px 0;
       }
-      
+
       .bet-section .bet-content {
         display: flex;
         align-items: flex-start;
         gap: 12px;
       }
-      
+
       .bet-content .icon {
-        font-size: 23px; 
+        font-size: 23px;
         margin-top: 2px;
       }
-      
+
       .bet-content .bet-text-1 {
         font-size: 22px;
         font-weight: 700;
@@ -107,20 +107,20 @@
         line-height: 1.5;
         margin-bottom: 4px;
       }
-      
+
       .bet-content .bet-text-2 {
         font-size: 22px;
         font-weight: 700;
-        color: #0D2A4B; 
+        color: #0D2A4B;
         line-height: 1.5;
       }
 
       .element-default .container-wrapper,
-      .element-default .container-6 { 
+      .element-default .container-6 {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 25px; 
+        gap: 25px;
         position: relative;
         align-self: stretch;
         width: 100%;
@@ -137,7 +137,7 @@
         width: 100%;
         flex: 0 0 auto;
       }
-      
+
       .element-default .match-container {
           display: flex;
           align-items: stretch;
@@ -161,7 +161,7 @@
           border-right: 2px solid #ffffff;
       }
       .left-team-pane img {
-          object-fit: contain; 
+          object-fit: contain;
       }
 
       .right-teams-pane {
@@ -176,7 +176,7 @@
           background-position: center;
           background-repeat: no-repeat;
       }
-      
+
       .team-logo.small-logo {
           width: 55px;
           height: 55px;
@@ -192,7 +192,7 @@
           width: 55px;
           height: 55px;
       }
-      
+
       .vs-text {
           font-family: "Segoe UI-Black", Helvetica;
           font-weight: 900;
@@ -227,7 +227,7 @@
         -webkit-backdrop-filter: blur(4px) brightness(100%);
         position: relative;
         flex-wrap: wrap;
-        gap: 0 15px; 
+        gap: 0 15px;
       }
 
       .element-default .text-wrapper-2,
@@ -248,11 +248,11 @@
       .element-default .text-wrapper-2::after {
         content: '';
         position: absolute;
-        top: -5px; 
-        bottom: -5px; 
+        top: -5px;
+        bottom: -5px;
         width: 3px;
         background-color: #00FFFF;
-        right: calc(-15px / 2 - 3px / 2); 
+        right: calc(-15px / 2 - 3px / 2);
       }
 
       @keyframes popIn {
@@ -284,18 +284,18 @@
           border: 2px solid #00FFFF; /* Cyan Border to match theme */
           border-radius: 50%;
           cursor: pointer;
-          
+
           /* Gradient background matching match cards */
           background: linear-gradient(90deg, rgba(10, 25, 60, 0.95) 0%, rgba(27, 68, 162, 0.95) 84%);
-          
+
           /* Glow Effect */
           box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5);
-          
+
           /* Layout for SVG */
           display: flex;
           align-items: center;
           justify-content: center;
-          
+
           /* Animation Properties */
           opacity: 0;
           visibility: hidden;
@@ -321,7 +321,7 @@
           fill: #ffffff; /* White icon */
           filter: drop-shadow(0 0 2px rgba(0,0,0,0.5));
       }
-      
+
 
       /* --- DESKTOP STYLES --- */
       @media (min-width: 769px) {
@@ -329,11 +329,11 @@
             max-width: 782px;
             margin: 0 auto;
         }
-        
+
         .element-default .background {
             padding: 60px;
         }
-        
+
         .bet-section {
           margin-bottom: 60px;
         }
@@ -346,16 +346,16 @@
         .bet-section .main-title {
             font-size: 30px;
         }
-        
+
         .bet-content .icon {
           font-size: 30px;
           margin-top: 4px;
         }
-        
+
         .bet-content .bet-text-1 {
           font-size: 30px;
         }
-      
+
         .bet-content .bet-text-2 {
           font-size: 30px;
         }
@@ -367,13 +367,13 @@
         .element-default .match-container {
             min-height: 190px;
         }
-        
+
         .left-team-pane { flex: 2; }
         .right-teams-pane { flex: 3; }
-        
+
         .large-logo { width: 165px; height: 170px; }
         .small-logo { width: 102px; height: 102px; }
-        .team-logo.small-logo { width: 80px; height: 80px; }
+        .team-logo.small-logo { width: 100px; height: 90px; }
         .vs-text { font-size: 44px; }
 
         .element-default .overlay-border-2 {
@@ -381,7 +381,7 @@
             flex-wrap: nowrap;
             gap: 0 25px;
         }
-        
+
         .element-default .text-wrapper-2::after {
             right: calc(-25px / 2 - 3px / 2);
         }
@@ -410,10 +410,10 @@
     <div class="element-default">
       <div class="container">
         <img class="margin" src="{{ asset('images/winbox_football/football-my.png') }}" /> <!-- Placeholder for background image -->
-        
-        <div class="background">                               
+
+        <div class="background">
           <div class="max-bet-container">
-            
+
             <!-- Chinese Version -->
             <div class="bet-section">
                 <h2 class="main-title">足球赛事最高投注 📢</h2>
