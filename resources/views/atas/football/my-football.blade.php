@@ -20,7 +20,6 @@
             width: 100%;
             overflow-x: hidden;
             background-color: #0a1628;
-            /* 添加平滑滚动 */
             scroll-behavior: smooth;
         }
 
@@ -56,6 +55,7 @@
             object-fit: cover;
         }
 
+        /* 赛事区域背景 (保留红黑渐变) */
         .element-default .matches-background {
             display: flex;
             flex-direction: column;
@@ -67,6 +67,7 @@
             background: linear-gradient(180deg, #4a0d0d 0%, #1a0505 100%);
         }
 
+        /* 信息区域背景 (保留淡灰色) */
         .element-default .info-background {
             display: flex;
             flex-direction: column;
@@ -77,8 +78,7 @@
             background-color: #f8f8f8;
         }
 
-        /* --- CARD DESIGN START --- */
-
+        /* --- 赛事卡片设计 (保留红金样式) --- */
         .match-card-wrapper {
             display: flex;
             width: 100%;
@@ -98,13 +98,12 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
             width: 100px;
             flex-shrink: 0;
-            position: relative;
         }
 
         .league-logo-img {
-            width: 100px;
-            height: 100px;
-            /* max-height: 80px; */
+            width: 100%;
+            height: auto;
+            max-height: 80px;
             object-fit: contain;
         }
 
@@ -121,56 +120,36 @@
             border: 1px solid #5c1818;
         }
 
-        .match-info-box::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100px;
-            height: 100px;
-            background: radial-gradient(circle, rgba(255, 215, 0, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
-            pointer-events: none;
-        }
-
         .teams-row {
             display: flex;
             align-items: center;
             justify-content: space-around;
             padding: 15px 10px 35px 10px;
             width: 100%;
-            height: 100%;
         }
 
         .team-logo-img {
             width: 50px;
             height: 50px;
             object-fit: contain;
-            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
         }
 
         .vs-badge {
-            font-family: "Segoe UI-Black", "Arial Black", Helvetica, sans-serif;
+            font-family: "Segoe UI-Black", "Arial Black", sans-serif;
             font-weight: 900;
             font-size: 32px;
             font-style: italic;
             background: linear-gradient(180deg, #FFEFBA 10%, #FFC107 50%, #B8860B 90%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-fill-color: transparent;
             filter: drop-shadow(0px 2px 0px #5c3a00);
-            margin: 0 10px;
-            position: relative;
-            z-index: 2;
         }
 
-        /* Mobile Style for Date Bar */
         .date-bar {
             position: absolute;
             bottom: 0;
             right: 0;
-            left: 5px;
+            left: 20px;
             height: 28px;
             background: linear-gradient(90deg, #FFC107 0%, #F57F17 100%);
             clip-path: polygon(15px 0, 100% 0, 100% 100%, 0 100%);
@@ -179,8 +158,6 @@
             justify-content: flex-end;
             padding-right: 15px;
             gap: 15px;
-            border-top: 1px solid #ffeeba;
-            box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.5);
         }
 
         .date-text,
@@ -189,12 +166,9 @@
             font-weight: 700;
             color: #ffffff;
             font-size: 14px;
-            text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
-            letter-spacing: 0.5px;
         }
 
-        /* --- CARD DESIGN END --- */
-
+        /* --- 投注内容设计 (结合第一个代码的配色) --- */
         .max-bet-container {
             width: 100%;
             font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
@@ -204,14 +178,11 @@
             margin-bottom: 40px;
         }
 
-        .bet-section:last-child {
-            margin-bottom: 0;
-        }
-
         .bet-section .main-title {
             font-size: 22px;
             font-weight: 900;
             color: #0D2A4B;
+            /* 保留深蓝色标题 */
             letter-spacing: 0.5px;
         }
 
@@ -219,7 +190,7 @@
             height: 0;
             width: 100%;
             border-top: 4px solid #3A70A1;
-            background-color: transparent;
+            /* 蓝色分割线 */
             margin: 15px 0 15px 0;
         }
 
@@ -229,26 +200,32 @@
             gap: 12px;
         }
 
+        .bet-content .icon {
+            font-size: 23px;
+            margin-top: 2px;
+        }
+
         .bet-content .text-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bet-content .bet-text-1 {
             font-size: 22px;
-            font-weight: 450;
+            font-weight: 700;
+            color: #0c3c60;
+            line-height: 1.5;
+            margin-bottom: 4px;
+        }
+
+        .bet-content .bet-text-2 {
+            font-size: 22px;
+            font-weight: 700;
             color: #0D2A4B;
             line-height: 1.5;
         }
 
-        .bet-content .text-group p:first-child {
-            color: #0c3c60;
-            margin-bottom: 4px;
-        }
-
-        .bet-content .text-group strong {
-            font-weight: 700;
-        }
-
-        .bet-content .text-group em {
-            font-style: italic;
-        }
-
+        /* 动画效果 */
         @keyframes popIn {
             from {
                 opacity: 0;
@@ -267,19 +244,7 @@
             opacity: 0;
         }
 
-        .element-default .matches-background>*:nth-child(1),
-        .element-default .info-background>*:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-
-        .element-default .matches-background>*:nth-child(2),
-        .element-default .info-background>*:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        /* ========================================= */
-        /* BACK TO TOP BUTTON STYLES (MATCHED COLORS)*/
-        /* ========================================= */
+        /* --- 返回顶部按钮 (红金配色) --- */
         .back-to-top {
             position: fixed;
             bottom: 20px;
@@ -323,6 +288,8 @@
             filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
         }
 
+
+        /* --- 桌面端适配 --- */
         @media (min-width: 769px) {
             .element-default .container {
                 max-width: 782px;
@@ -334,7 +301,7 @@
             }
 
             .element-default .info-background {
-                padding: 30px;
+                padding: 60px;
             }
 
             .match-card-wrapper {
@@ -342,28 +309,13 @@
                 gap: 20px;
             }
 
-            /* Desktop League Box 改进：减小padding让Logo更大 */
             .league-box {
                 width: 160px;
-                height: 160px;
-                padding: 10px;
-                border-radius: 16px;
+                padding: 20px;
             }
 
-            /* Desktop Logo 改进：移除max-height限制，让其充满容器 */
             .league-logo-img {
-                width: 180px;
-                height: 180px;
-                /* max-height: 100%; */
-                object-fit: contain;
-            }
-
-            .match-info-box {
-                border-radius: 16px;
-            }
-
-            .teams-row {
-                padding: 10px 40px 60px 40px;
+                max-height: 120px;
             }
 
             .team-logo-img {
@@ -378,39 +330,34 @@
 
             .date-bar {
                 height: 45px;
-                left: 0;
-                width: 100%;
                 clip-path: polygon(50px 0, 100% 0, 100% 100%, 0% 100%);
                 justify-content: center;
-                padding-right: 0;
-                padding-left: 30px;
                 gap: 50px;
             }
 
             .date-text,
             .time-text {
                 font-size: 30px;
-                font-weight: 800;
                 text-shadow: 2px 2px 0px rgba(160, 90, 0, 0.6);
-            }
-
-            .bet-section {
-                margin-bottom: 60px;
-            }
-
-            .bet-section .separator-line {
-                border-top-width: 6px;
             }
 
             .bet-section .main-title {
                 font-size: 30px;
             }
 
-            .bet-content .text-group {
+            .bet-section .separator-line {
+                border-top-width: 6px;
+            }
+
+            .bet-content .icon {
                 font-size: 30px;
             }
 
-            /* 桌面端按钮位置调整 */
+            .bet-content .bet-text-1,
+            .bet-content .bet-text-2 {
+                font-size: 30px;
+            }
+
             .back-to-top {
                 bottom: 40px;
                 right: 420px;
@@ -424,85 +371,68 @@
 <body>
     <div class="element-default">
         <div class="container">
-            <!-- Header Image -->
+            <!-- 头部图片 -->
             <img class="margin" src="{{ asset('images/winbox_football/football-my.png') }}" />
 
-            <!-- Matches Section -->
-            <div class="matches-background">
-                @if ($matches->isNotEmpty())
-                    @foreach ($matches as $match)
-                        <div class="match-card-wrapper">
+            <!-- 信息区域 (改为最高投注内容) -->
+            <div class="info-background">
+                <div class="max-bet-container">
 
-                            <!-- Left: League Logo -->
-                            <div class="league-box">
-                                <img class="league-logo-img" src="{{ asset('storage/' . $match->league_logo_path) }}"
-                                    alt="{{ $match->league_name }}">
-                            </div>
-
-                            <!-- Right: Match Info -->
-                            <div class="match-info-box">
-
-                                <div class="teams-row">
-                                    <img class="team-logo-img" src="{{ asset('storage/' . $match->team1_logo_path) }}"
-                                        alt="{{ $match->team1_name }}">
-                                    <div class="vs-badge">VS</div>
-                                    <img class="team-logo-img" src="{{ asset('storage/' . $match->team2_logo_path) }}"
-                                        alt="{{ $match->team2_name }}">
-                                </div>
-
-                                <!-- Date Bar -->
-                                <div class="date-bar">
-                                    <span
-                                        class="date-text">{{ \Carbon\Carbon::parse($match->date)->format('d/m/Y') }}</span>
-                                    <span class="time-text">{{ \Carbon\Carbon::parse($match->time)->format('H:i') }}
-                                        GMT+8</span>
-                                </div>
-
+                    <!-- 中文版本 -->
+                    <div class="bet-section">
+                        <h2 class="main-title">足球赛事最高投注 📢</h2>
+                        <div class="separator-line"></div>
+                        <div class="bet-content">
+                            <span class="icon">⚽</span>
+                            <div class="text-group">
+                                <p class="bet-text-1">最高投注额高达</p>
+                                <p class="bet-text-2">MYR 30,000</p>
                             </div>
                         </div>
-                    @endforeach
-                @endif
-            </div>
-
-            <!-- Info Section -->
-            <div class="info-background">
-                @if ($descriptions->isNotEmpty())
-                    <div class="max-bet-container">
-                        @foreach ($descriptions as $description)
-                            <div class="bet-section">
-                                <h2 class="main-title">{!! $description->title !!}</h2>
-                                <div class="separator-line"></div>
-                                <div class="bet-content">
-                                    <div class="text-group">{!! $description->information !!}</div>
-                                </div>
-                            </div>
-                        @endforeach
                     </div>
-                @endif
+
+                    <!-- 英文版本 -->
+                    <div class="bet-section">
+                        <h2 class="main-title">SPORTS MATCHES MAXIMUM BET 📢</h2>
+                        <div class="separator-line"></div>
+                        <div class="bet-content">
+                            <span class="icon">⚽</span>
+                            <div class="text-group">
+                                <p class="bet-text-1">MAXIMUM BET UP TO</p>
+                                <p class="bet-text-2">MYR 30,000</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
         </div>
     </div>
 
-    <!-- BACK TO TOP BUTTON -->
+    <!-- [ADDED] BACK TO TOP BUTTON -->
     <button onclick="topFunction()" id="backToTopBtn" class="back-to-top" title="Go to top">
+        <!-- White SVG Arrow -->
         <svg viewBox="0 0 24 24">
             <path d="M12 4l-8 8h6v8h4v-8h6z"></path>
         </svg>
     </button>
 
-    <!-- JS FOR SCROLL FUNCTIONALITY -->
+    <!-- [ADDED] JAVASCRIPT FOR SCROLL FUNCTIONALITY -->
     <script>
+        // Get the button
         let mybutton = document.getElementById("backToTopBtn");
 
-        window.onscroll = function() {
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 20) {
                 mybutton.classList.add("show");
             } else {
                 mybutton.classList.remove("show");
             }
-        };
+        });
 
+        // When the user clicks on the button, scroll to the top of the document
         function topFunction() {
             window.scrollTo({
                 top: 0,

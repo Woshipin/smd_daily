@@ -102,9 +102,9 @@
         }
 
         .league-logo-img {
-            width: 100px;
-            height: 100px;
-            /* max-height: 80px; */
+            width: 100%;
+            height: auto;
+            max-height: 80px;
             object-fit: contain;
         }
 
@@ -342,20 +342,14 @@
                 gap: 20px;
             }
 
-            /* Desktop League Box 改进：减小padding让Logo更大 */
             .league-box {
                 width: 160px;
-                height: 160px;
-                padding: 10px;
+                padding: 20px;
                 border-radius: 16px;
             }
 
-            /* Desktop Logo 改进：移除max-height限制，让其充满容器 */
             .league-logo-img {
-                width: 180px;
-                height: 180px;
-                /* max-height: 100%; */
-                object-fit: contain;
+                max-height: 120px;
             }
 
             .match-info-box {
