@@ -16,20 +16,20 @@
             --gold-gradient: linear-gradient(to bottom, #fff8db 0%, #ffc107 50%, #ff9800 100%);
             --gold-text: #ffc107;
             --dark-blue-text: #0d2650;
-            --line-blue: #4077a5; 
+            --line-blue: #4077a5;
             --red-dot: #ff0000;
         }
 
-        * { 
-            box-sizing: border-box; 
-            margin: 0; 
-            padding: 0; 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-        
+
         body {
             font-family: "Microsoft YaHei", Arial, sans-serif;
             line-height: 1.5;
-            background-color: #f4f4f4; 
+            background-color: #f4f4f4;
         }
 
         img {
@@ -63,42 +63,34 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             filter: drop-shadow(0 0 8px rgba(255, 193, 7, 0.6)) drop-shadow(0 0 15px rgba(255, 152, 0, 0.4));
-            display: block; 
+            display: block;
         }
 
-        /* --- USD 货币标签样式 (已修改) --- */
+        /* --- USD 货币标签样式 --- */
         .currency-badge {
             position: absolute;
             top: 25px;
             right: 20px;
             z-index: 100;
-            display: flex; 
-            border-radius: 8px; 
-            overflow: hidden; 
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); 
+            display: flex;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .badge-left {
-            /* 修改：50% 硬切分渐变 (浅绿/深绿) */
-            background: linear-gradient(to bottom, 
-                #4cd964 0%,   #4cd964 50%, 
-                #28a745 50%,  #28a745 100%
-            );
+            background: linear-gradient(to bottom, #4cd964 0%, #4cd964 50%, #28a745 50%, #28a745 100%);
             padding: 5px 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: inset 0 1px 0 rgba(255,255,255,0.6); 
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
             position: relative;
         }
 
         .badge-right {
-            /* 修改：50% 硬切分渐变 (浅紫/深紫) */
-            background: linear-gradient(to bottom, 
-                #6b5fff 0%,   #6b5fff 50%, 
-                #4e3cf5 50%,  #4e3cf5 100%
-            );
+            background: linear-gradient(to bottom, #6b5fff 0%, #6b5fff 50%, #4e3cf5 50%, #4e3cf5 100%);
             padding: 5px 15px;
             display: flex;
             align-items: center;
@@ -111,7 +103,6 @@
             font-family: Arial, sans-serif;
             color: #fff;
             font-size: 24px;
-            /* 修改：加深文字阴影 */
             text-shadow: 0 2px 0 rgba(0,0,0,0.2);
             letter-spacing: 0.5px;
         }
@@ -119,15 +110,14 @@
         .coin-icon {
             width: 32px;
             height: 32px;
-            /* 修改：更像图中的青色/白色径向渐变 */
             background: radial-gradient(circle, #49abed 30%, #2471d1 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #ffffff; /* 图标颜色改为深青色 */
+            color: #ffffff;
             font-size: 18px;
-            border: 2px solid rgba(255,255,255,0.6); 
+            border: 2px solid rgba(255,255,255,0.6);
             box-shadow: 0 2px 2px rgba(0,0,0,0.2);
         }
 
@@ -140,25 +130,25 @@
             bottom: 20px;
             right: 20px;
             z-index: 9999;
-            width: 50px;
-            height: 50px;
+            width: 55px;
+            height: 55px;
             border: none;
             outline: none;
             cursor: pointer;
             border-radius: 50%;
-            
+
             /* Theme Color: Gold/Black */
             background: var(--bg-black); /* 黑色背景 */
             border: 2px solid var(--gold-text); /* 金色边框 */
             box-shadow: 0 6px 15px rgba(0,0,0,0.6), 0 0 10px var(--gold-text); /* 黑色和金色阴影 */
-            
-            display: flex; 
+
+            display: flex;
             align-items: center;
             justify-content: center;
-            
-            opacity: 0;           
-            visibility: hidden;   
-            transform: translateY(20px); 
+
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
@@ -176,8 +166,8 @@
 
         /* The SVG Icon Style - Solid White Arrow */
         .back-to-top svg {
-            width: 24px;
-            height: 24px;
+            width: 30px;
+            height: 30px;
             fill: var(--gold-text); /* 金色箭头 */
             filter: drop-shadow(0 0 2px rgba(255, 193, 7, 0.5));
         }
@@ -194,7 +184,7 @@
             }
 
             .layout-block {
-                width: 50%; 
+                width: 50%;
                 min-width: 50%;
                 max-width: 50%;
                 margin: 0 auto;
@@ -204,11 +194,11 @@
                 background-color: var(--bg-black);
                 background-image: radial-gradient(circle at 50% 40%, #2a2a2a 0%, #000 70%);
                 text-align: center;
-                padding: 40px 30px 40px; 
+                padding: 40px 30px 40px;
                 color: white;
-                position: relative; 
+                position: relative;
                 box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-                margin-bottom: 30px; 
+                margin-bottom: 30px;
             }
 
             .hazard-stripe {
@@ -216,13 +206,13 @@
                 bottom: 0;
                 left: 0;
                 width: 100%;
-                height: 24px; 
+                height: 24px;
                 background-image: repeating-linear-gradient(
                     -45deg,
-                    #ffc107,        
-                    #ffc107 30px,   
-                    #000000 30px,   
-                    #000000 60px    
+                    #ffc107,
+                    #ffc107 30px,
+                    #000000 30px,
+                    #000000 60px
                 );
                 box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
                 border-top: 2px solid #000;
@@ -231,9 +221,9 @@
 
             /* --- 头部区域 flex 布局 --- */
             .header-main-icon {
-                display: flex;             
-                justify-content: center;   
-                align-items: center;       
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 margin: 40px;
             }
 
@@ -243,24 +233,28 @@
                 flex-direction: column;
                 align-items: center; /* 关键：改为 center 实现居中对齐 */
                 justify-content: center;
-                margin-right: 30px;    /* 文字组和图标之间的间距 */
+                margin-right: 0;       /* 修改：移除右边距 */
                 line-height: 1.1;
+                text-align: center;    /* 确保文字居中 */
             }
 
-            .title-en { 
+            .title-en {
                 font-size: 60px; /* 稍微放大使其更醒目 */
-                letter-spacing: 2px; 
+                letter-spacing: 2px;
             }
-            .title-cn { 
-                font-size: 60px; 
+            .title-cn {
+                font-size: 60px;
                 margin-top: 5px; /* 在两行字之间加一点空隙 */
                 letter-spacing: 5px; /* 增加字间距，更有气势 */
             }
 
+            /* ★★★ 修改：图标容器 (Desktop) ★★★ */
             .icon-wrapper {
-                position: relative;
+                position: absolute; /* 修改：改为绝对定位 */
+                top: 30px;          /* 固定在头部左上角 */
+                left: 30px;
                 width: 80px;
-                height: 80px;
+                height: 50px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -278,12 +272,12 @@
             }
 
             .maintenance-card {
-                position: relative; 
+                position: relative;
                 background: rgba(255, 255, 255, 0.05);
-                border: 1px solid rgba(255, 193, 7, 0.5); 
+                border: 1px solid rgba(255, 193, 7, 0.5);
                 border-radius: 12px;
-                padding: 40px 25px 25px; 
-                margin-bottom: 40px; 
+                padding: 40px 25px 25px;
+                margin-bottom: 40px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -292,11 +286,11 @@
 
             .card-border-icon {
                 position: absolute;
-                top: -25px; 
+                top: -25px;
                 left: 50%;
                 transform: translateX(-50%);
                 width: 50px; height: 50px;
-                background: #000; 
+                background: #000;
                 border: 2px solid var(--gold-text);
                 border-radius: 50%;
                 display: flex;
@@ -317,14 +311,14 @@
                 width: 100%;
             }
             .logo-img {
-                height: 150px; 
+                height: 150px;
                 width: 150px;
                 object-fit: contain;
                 padding: 5px;
             }
 
             .time-display {
-                font-size: 40px; 
+                font-size: 40px;
                 font-weight: bold;
                 color: #fff;
                 margin-top: 5px;
@@ -357,14 +351,14 @@
                 display: flex;
                 align-items: center;
             }
-            .dot { color: var(--red-dot); font-size: 30px; margin-right: 10px; }
+            .dot { color: var(--red-dot); font-size: 45px; margin-right: 10px; }
             .icon-finger { font-size: 30px; margin-right: 10px; }
             .time-row {
                 display: flex;
                 align-items: flex-start;
                 margin-bottom: 12px;
                 font-size: 30px;
-                color: #444; 
+                color: #444;
             }
             .time-label { color: #555; margin-right: 8px; }
             .time-val { display: block; font-weight: bold; color: var(--dark-blue-text); font-size: 30px; }
@@ -426,9 +420,9 @@
                 background-color: var(--bg-black);
                 background-image: radial-gradient(circle at 50% 40%, #2a2a2a 0%, #000 70%);
                 text-align: center;
-                padding: 45px 15px 15px; 
+                padding: 35px 15px 15px;
                 color: white;
-                position: relative; 
+                position: relative;
             }
 
             .hazard-stripe {
@@ -436,13 +430,13 @@
                 bottom: 0;
                 left: 0;
                 width: 100%;
-                height: 16px; 
+                height: 16px;
                 background-image: repeating-linear-gradient(
                     -45deg,
                     #ffc107,
-                    #ffc107 15px,   
+                    #ffc107 15px,
                     #000000 15px,
-                    #000000 30px    
+                    #000000 30px
                 );
                 box-shadow: 0 -2px 5px rgba(0,0,0,0.5);
                 border-top: 1px solid #000;
@@ -453,7 +447,7 @@
                 top: 20px;
                 right: 15px;
             }
-            
+
             .badge-left {
                 padding: 4px 8px;
             }
@@ -462,9 +456,9 @@
             }
 
             .badge-right span {
-                font-size: 20px; 
+                font-size: 20px;
             }
-            
+
             .coin-icon {
                 width: 26px;
                 height: 26px;
@@ -484,33 +478,36 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center; /* 关键：改为 center 实现居中对齐 */
-                margin-right: 15px;
+                margin-right: 0;     /* 修改：移除右边距 */
                 line-height: 1.2;
             }
 
-            .title-en { 
+            .title-en {
                 font-size: 32px; /* 手机端字体大小 */
-                letter-spacing: 1px; 
+                letter-spacing: 1px;
             }
-            .title-cn { 
-                font-size: 35px; 
+            .title-cn {
+                font-size: 35px;
                 margin-top: 2px;
                 letter-spacing: 3px;
             }
 
+            /* ★★★ 修改：图标容器 (Mobile) ★★★ */
             .icon-wrapper {
-                position: relative;
+                position: absolute; /* 修改：改为绝对定位 */
+                top: 15px;          /* 固定在头部左上角 */
+                left: 15px;
                 width: 45px; height: 45px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 color: var(--gold-text);
             }
-            .icon-wrapper .fa-gear { font-size: 40px; animation: spin 8s linear infinite; }
+            .icon-wrapper .fa-gear { font-size: 50px; animation: spin 8s linear infinite; }
             .icon-wrapper .fa-wrench {
                 position: absolute;
-                font-size: 25px;
-                right: -5px; bottom: -2px;
+                font-size: 30px;
+                right: -15px; bottom: -12px;
                 color: #fff;
                 animation: swing 3s ease-in-out infinite;
                 transform-origin: bottom right;
@@ -522,8 +519,8 @@
                 background: rgba(255, 255, 255, 0.05);
                 border: 1px solid rgba(255, 193, 7, 0.5);
                 border-radius: 10px;
-                padding: 35px 10px 20px; 
-                margin-bottom: 30px; 
+                padding: 35px 10px 20px;
+                margin-bottom: 30px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -557,7 +554,7 @@
                 width: 100%;
             }
             .logo-img {
-                height: 100px; 
+                height: 100px;
                 width: 100px;
                 object-fit: contain;
                 padding: 3px;
@@ -599,7 +596,7 @@
                 display: flex;
                 align-items: center;
             }
-            .dot { color: var(--red-dot); font-size: 30px; margin-right: 6px; }
+            .dot { color: var(--red-dot); font-size: 40px; margin-right: 6px; }
             .icon-finger { font-size: 30px; margin-right: 8px; }
             .time-row {
                 display: flex;
@@ -652,16 +649,16 @@
                 <span>USD</span>
             </div>
         </div>
-        
+
         <!-- ★★★ 修改部分：MAINTENANCE/维修 上下居中显示 ★★★ -->
         <div class="header-main-icon">
             <!-- 文字组容器 -->
             <div class="text-group">
-                <span class="winbox-logo title-en">MAINTENANCE</span>
-                <span class="winbox-logo title-cn">维修</span>
+                <span class="winbox-logo title-en">ปรับปรุง</span>
+                <span class="winbox-logo title-cn">MAINTENANCE</span>
             </div>
-            
-            <!-- 图标容器 -->
+
+            <!-- 图标容器 (CSS使其绝对定位到左上角) -->
             <div class="icon-wrapper">
                 <i class="fa-solid fa-gear"></i>
                 <i class="fa-solid fa-wrench"></i>
@@ -688,13 +685,13 @@
             </div>
         </div>
         @endforeach
-        
+
         <div class="hazard-stripe"></div>
     </div>
 
     <!-- SECTION TWO: 底部内容 -->
     <div class="maint-content layout-block">
-        
+
         <!-- PART A: 中文区域 -->
         <div class="lang-section-cn">
             <div class="intro-text">
