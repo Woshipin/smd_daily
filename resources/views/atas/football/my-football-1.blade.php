@@ -103,7 +103,7 @@
 
         .league-logo-img {
             width: 100px;
-            height: 100px;
+            height: 80px;
             /* max-height: 80px; */
             object-fit: contain;
         }
@@ -188,7 +188,7 @@
             font-family: "Segoe UI", sans-serif;
             font-weight: 700;
             color: #ffffff;
-            font-size: 14px;
+            font-size: 14.5px;
             text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
             letter-spacing: 0.5px;
         }
@@ -317,8 +317,8 @@
         }
 
         .back-to-top svg {
-            width: 24px;
-            height: 24px;
+            width: 26px;
+            height: 26px;
             fill: #ffffff;
             filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
         }
@@ -352,8 +352,8 @@
 
             /* Desktop Logo 改进：移除max-height限制，让其充满容器 */
             .league-logo-img {
-                width: 180px;
-                height: 180px;
+                width: 160px;
+                height: 160px;
                 /* max-height: 100%; */
                 object-fit: contain;
             }
@@ -390,7 +390,7 @@
             .date-text,
             .time-text {
                 font-size: 30px;
-                font-weight: 800;
+                font-weight: 700;
                 text-shadow: 2px 2px 0px rgba(160, 90, 0, 0.6);
             }
 
@@ -416,6 +416,11 @@
                 right: 420px;
                 width: 60px;
                 height: 60px;
+            }
+
+            .back-to-top svg {
+                width: 30px;
+                height: 30px;
             }
         }
     </style>
@@ -486,23 +491,27 @@
 
     <!-- BACK TO TOP BUTTON -->
     <button onclick="topFunction()" id="backToTopBtn" class="back-to-top" title="Go to top">
+        <!-- White SVG Arrow -->
         <svg viewBox="0 0 24 24">
             <path d="M12 4l-8 8h6v8h4v-8h6z"></path>
         </svg>
     </button>
 
-    <!-- JS FOR SCROLL FUNCTIONALITY -->
+    <!-- [ADDED] JAVASCRIPT FOR SCROLL FUNCTIONALITY -->
     <script>
+        // Get the button
         let mybutton = document.getElementById("backToTopBtn");
 
-        window.onscroll = function() {
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        // When the user scrolls down 300px from the top of the document, show the button
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
                 mybutton.classList.add("show");
             } else {
                 mybutton.classList.remove("show");
             }
-        };
+        });
 
+        // When the user clicks on the button, scroll to the top of the document
         function topFunction() {
             window.scrollTo({
                 top: 0,
@@ -510,6 +519,7 @@
             });
         }
     </script>
+
 </body>
 
 </html>

@@ -102,9 +102,9 @@
         }
 
         .league-logo-img {
-            width: 100%;
-            height: auto;
-            max-height: 80px;
+            width: 100px;
+            height: 80px;
+            /* max-height: 80px; */
             object-fit: contain;
         }
 
@@ -188,7 +188,7 @@
             font-family: "Segoe UI", sans-serif;
             font-weight: 700;
             color: #ffffff;
-            font-size: 14px;
+            font-size: 14.5px;
             text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
             letter-spacing: 0.5px;
         }
@@ -317,8 +317,8 @@
         }
 
         .back-to-top svg {
-            width: 24px;
-            height: 24px;
+            width: 26px;
+            height: 26px;
             fill: #ffffff;
             filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
         }
@@ -349,7 +349,10 @@
             }
 
             .league-logo-img {
-                max-height: 120px;
+                width: 180px;
+                height: 180px;
+                /* max-height: 100%; */
+                object-fit: contain;
             }
 
             .match-info-box {
@@ -384,7 +387,7 @@
             .date-text,
             .time-text {
                 font-size: 30px;
-                font-weight: 800;
+                font-weight: 700;
                 text-shadow: 2px 2px 0px rgba(160, 90, 0, 0.6);
             }
 
@@ -410,6 +413,11 @@
                 right: 420px;
                 width: 60px;
                 height: 60px;
+            }
+
+            .back-to-top svg {
+                width: 30px;
+                height: 30px;
             }
         }
     </style>
