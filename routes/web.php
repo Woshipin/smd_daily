@@ -71,6 +71,10 @@ Route::get('/winbox-th-horse-1', [HorseController::class, 'getThHorse1']);
 // th-horse 1-5 round status 2
 Route::get('/winbox-th-horse-2', [HorseController::class, 'getThHorse2']);
 
+// --------------------------------------------------------------------- my-horse Routes --------------------------------------------------------------------------- //
+// my-horse 0 round status 0
+Route::get('/winbox-my-horse-image', [HorseController::class, 'getMyHorseImage1']);
+
 // --------------------------------------------------------------------------------- All Winbox Jackpot Routes --------------------------------------------------------- //
 // --------------------------------------------------------------------- myr-thb-Winbox-Jackpot ------------------------------------------------------------------------ //
 // myr-Jackpot

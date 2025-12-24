@@ -92,7 +92,7 @@ class HorseController extends Controller
 
         // 直接從資料庫中獲取所有描述資料，不進行任何排序
         $myhorse2descriptions = WinboxMyHorseInformation2::all();
-        
+
         // 回傳 view，並附上比賽和描述的資料
         return view('winbox.horse.my-horse-2', [
             'myhorse2'      => $myhorse2,
@@ -167,11 +167,18 @@ class HorseController extends Controller
 
         // 直接從資料庫中獲取所有描述資料，不進行任何排序
         $thhorse2descriptions = WinboxThHorseInformation2::all();
-        
+
         // 回傳 view，並附上比賽和描述的資料
         return view('winbox.horse.th-horse-2', [
             'thhorse2'      => $thhorse2,
             'thhorse2descriptions' => $thhorse2descriptions,
         ]);
+    }
+
+    // ------------------------------------------------------------------------- my-horse route 0-2 ---------------------------------------------------------------------- //
+    public function getMyHorseImage1()
+    {
+        // 直接從資料庫中獲取所有比賽資料，不進行任何排序
+        return view('winbox.horse.images.winbox-my-horse-image');
     }
 }
